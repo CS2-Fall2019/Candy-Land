@@ -33,15 +33,26 @@ namespace Game_CandyLand
 
         }
 
-        // Lose a Turn 
-        public void LoseATurn(bool stuck)
+        // Lose a Turn - will look something like this. so no one is stuck infinitely we only change stuck to true if its false. it should remove after one turn
+        /*
+        public void LoseATurn(Player)
         {
-            if(stuck == true)
+            if ((player.location == Locations[46] || player.location == Locations[86] || player.location == Locations[117]) && player.stuck == false)
             {
-
+                Player.stuck = true;
             }
-            else { }
+            else
+            {
+            Player.stuck = false;
+            }
+
+            if (Player.stuck == true)
+            {
+                //logic to remove turn here
+                //probably remove from 
+            }
         }
+        */
 
         public void CurrentPlayerTurn()
         {

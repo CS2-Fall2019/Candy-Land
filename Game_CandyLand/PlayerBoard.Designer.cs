@@ -67,6 +67,7 @@
             this.Draw_btn.TabIndex = 1;
             this.Draw_btn.Text = "Draw Card";
             this.Draw_btn.UseVisualStyleBackColor = false;
+            this.Draw_btn.Click += new System.EventHandler(this.Draw_btn_Click);
             // 
             // Start_btn
             // 
@@ -111,44 +112,44 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(62, 801);
+            this.label1.Location = new System.Drawing.Point(274, 895);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 47);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Position1";
+            this.label1.Text = "Player1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(147, 801);
+            this.label2.Location = new System.Drawing.Point(327, 895);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 47);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Position2";
+            this.label2.Text = "Player2";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(62, 713);
+            this.label3.Location = new System.Drawing.Point(380, 895);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 47);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Position3";
+            this.label3.Text = "Player3";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(147, 713);
+            this.label4.Location = new System.Drawing.Point(433, 895);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 47);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Position4";
+            this.label4.Text = "Player4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PlayerBoard

@@ -175,6 +175,7 @@ namespace Game_CandyLand
                 // MovePlayer(pickedCard); // Need to get player info from player class.
             }
             */
+            MessageBox.Show(thisCard.ToString());
         }
     }
 }

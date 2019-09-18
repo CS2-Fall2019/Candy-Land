@@ -38,6 +38,10 @@ namespace Game_CandyLand
 
             //create the board and initialize it
             Board PlayBoard = new Board();
+            PlayBoard.Round = 1;
+            PlayBoard.Leader = 1;
+            PlayBoard.CurrentPlayer = 1;
+            PlayBoard.NumberOfPlayers = 1;
 
             //set up 134 board locations in the locations array
             for (int i = 0; i < PlayBoard.Locations.Length; i++)
@@ -47,8 +51,8 @@ namespace Game_CandyLand
 
             //set up the x and y locations for each location by adding it to the correct array LONG
             //Any way to improve below code?
-            PlayBoard.LocationsX[0] = 62;
-            PlayBoard.LocationsY[0] = 713;
+            PlayBoard.LocationsX[0] = 0;
+            PlayBoard.LocationsY[0] = 0;
 
             PlayBoard.LocationsX[1] = 211;
             PlayBoard.LocationsY[1] = 814;
@@ -158,302 +162,299 @@ namespace Game_CandyLand
             PlayBoard.LocationsX[36] = 883;
             PlayBoard.LocationsY[36] = 670;
 
-            PlayBoard.LocationsX[37] = 883;
-            PlayBoard.LocationsY[37] = 670;
+            PlayBoard.LocationsX[37] = 930;
+            PlayBoard.LocationsY[37] = 668;
 
-            PlayBoard.LocationsX[38] = 883;
-            PlayBoard.LocationsY[38] = 670;
+            PlayBoard.LocationsX[38] = 969;
+            PlayBoard.LocationsY[38] = 646;
 
-            PlayBoard.LocationsX[39] = 883;
-            PlayBoard.LocationsY[39] = 670;
+            PlayBoard.LocationsX[39] = 992;
+            PlayBoard.LocationsY[39] = 611;
 
-            PlayBoard.LocationsX[40] = 883;
-            PlayBoard.LocationsY[40] = 670;
+            PlayBoard.LocationsX[40] = 995;
+            PlayBoard.LocationsY[40] = 564;
 
-            PlayBoard.LocationsX[41] = 883;
-            PlayBoard.LocationsY[41] = 670;
+            PlayBoard.LocationsX[41] = 979;
+            PlayBoard.LocationsY[41] = 524;
 
-            PlayBoard.LocationsX[42] = 883;
-            PlayBoard.LocationsY[42] = 670;
+            PlayBoard.LocationsX[42] = 941;
+            PlayBoard.LocationsY[42] = 499;//SPECIAL
 
-            PlayBoard.LocationsX[43] = 883;
-            PlayBoard.LocationsY[43] = 670;
+            PlayBoard.LocationsX[43] = 891;
+            PlayBoard.LocationsY[43] = 503;
 
-            PlayBoard.LocationsX[44] = 883;
-            PlayBoard.LocationsY[44] = 670;
+            PlayBoard.LocationsX[44] = 850;
+            PlayBoard.LocationsY[44] = 516;
 
-            PlayBoard.LocationsX[45] = 883;
-            PlayBoard.LocationsY[45] = 670;
+            PlayBoard.LocationsX[45] = 806;
+            PlayBoard.LocationsY[45] = 532;//RECIEVES FROM 35
 
-            PlayBoard.LocationsX[46] = 883;
-            PlayBoard.LocationsY[46] = 670;
+            PlayBoard.LocationsX[46] = 760;
+            PlayBoard.LocationsY[46] = 527;//STUCK
 
-            PlayBoard.LocationsX[47] = 883;
-            PlayBoard.LocationsY[47] = 670;
+            PlayBoard.LocationsX[47] = 718;
+            PlayBoard.LocationsY[47] = 508;
 
-            PlayBoard.LocationsX[48] = 883;
-            PlayBoard.LocationsY[48] = 670;
+            PlayBoard.LocationsX[48] = 681;
+            PlayBoard.LocationsY[48] = 484;
 
-            PlayBoard.LocationsX[49] = 883;
-            PlayBoard.LocationsY[49] = 670;
+            PlayBoard.LocationsX[49] = 640;
+            PlayBoard.LocationsY[49] = 457;
 
-            PlayBoard.LocationsX[50] = 883;
-            PlayBoard.LocationsY[50] = 670;
+            PlayBoard.LocationsX[50] = 598;
+            PlayBoard.LocationsY[50] = 442;
 
-            PlayBoard.LocationsX[51] = 883;
-            PlayBoard.LocationsY[51] = 670;
+            PlayBoard.LocationsX[51] = 552;
+            PlayBoard.LocationsY[51] = 435;
 
-            PlayBoard.LocationsX[52] = 883;
-            PlayBoard.LocationsY[52] = 670;
+            PlayBoard.LocationsX[52] = 504;
+            PlayBoard.LocationsY[52] = 441;
 
-            PlayBoard.LocationsX[53] = 883;
-            PlayBoard.LocationsY[53] = 670;
+            PlayBoard.LocationsX[53] = 462;
+            PlayBoard.LocationsY[53] = 456;
 
-            PlayBoard.LocationsX[54] = 883;
-            PlayBoard.LocationsY[54] = 670;
+            PlayBoard.LocationsX[54] = 422;
+            PlayBoard.LocationsY[54] = 481;
 
-            PlayBoard.LocationsX[55] = 883;
-            PlayBoard.LocationsY[55] = 670;
+            PlayBoard.LocationsX[55] = 392;
+            PlayBoard.LocationsY[55] = 514;
 
-            PlayBoard.LocationsX[56] = 883;
-            PlayBoard.LocationsY[56] = 670;
+            PlayBoard.LocationsX[56] = 362;
+            PlayBoard.LocationsY[56] = 550;
 
-            PlayBoard.LocationsX[57] = 883;
-            PlayBoard.LocationsY[57] = 670;
+            PlayBoard.LocationsX[57] = 335;
+            PlayBoard.LocationsY[57] = 587;
 
-            PlayBoard.LocationsX[58] = 883;
-            PlayBoard.LocationsY[58] = 670;
+            PlayBoard.LocationsX[58] = 305;
+            PlayBoard.LocationsY[58] = 617;
 
-            PlayBoard.LocationsX[59] = 883;
-            PlayBoard.LocationsY[59] = 670;
+            PlayBoard.LocationsX[59] = 268;
+            PlayBoard.LocationsY[59] = 642;//RECIEVE FROM 5
 
-            PlayBoard.LocationsX[60] = 883;
-            PlayBoard.LocationsY[60] = 670;
+            PlayBoard.LocationsX[60] = 228;
+            PlayBoard.LocationsY[60] = 653;
 
-            PlayBoard.LocationsX[61] = 883;
-            PlayBoard.LocationsY[61] = 670;
+            PlayBoard.LocationsX[61] = 186;
+            PlayBoard.LocationsY[61] = 656;
 
-            PlayBoard.LocationsX[62] = 883;
-            PlayBoard.LocationsY[62] = 670;
+            PlayBoard.LocationsX[62] = 142;
+            PlayBoard.LocationsY[62] = 648;
 
-            PlayBoard.LocationsX[63] = 883;
-            PlayBoard.LocationsY[63] = 670;
+            PlayBoard.LocationsX[63] = 102;
+            PlayBoard.LocationsY[63] = 636;
 
-            PlayBoard.LocationsX[64] = 883;
-            PlayBoard.LocationsY[64] = 670;
+            PlayBoard.LocationsX[64] = 67;
+            PlayBoard.LocationsY[64] = 609;
 
-            PlayBoard.LocationsX[65] = 883;
-            PlayBoard.LocationsY[65] = 670;
+            PlayBoard.LocationsX[65] = 51;
+            PlayBoard.LocationsY[65] = 569;
 
-            PlayBoard.LocationsX[66] = 883;
-            PlayBoard.LocationsY[66] = 670;
+            PlayBoard.LocationsX[66] = 44;
+            PlayBoard.LocationsY[66] = 522;
 
-            PlayBoard.LocationsX[67] = 883;
-            PlayBoard.LocationsY[67] = 670;
+            PlayBoard.LocationsX[67] = 69;
+            PlayBoard.LocationsY[67] = 488;
 
-            PlayBoard.LocationsX[68] = 883;
-            PlayBoard.LocationsY[68] = 670;
+            PlayBoard.LocationsX[68] = 109;
+            PlayBoard.LocationsY[68] = 473;
 
-            PlayBoard.LocationsX[69] = 883;
-            PlayBoard.LocationsY[69] = 670;
+            PlayBoard.LocationsX[69] = 152;
+            PlayBoard.LocationsY[69] = 476;//SPECIAL
 
-            PlayBoard.LocationsX[70] = 883;
-            PlayBoard.LocationsY[70] = 670;
+            PlayBoard.LocationsX[70] = 192;
+            PlayBoard.LocationsY[70] = 489;
 
-            PlayBoard.LocationsX[71] = 883;
-            PlayBoard.LocationsY[71] = 670;
+            PlayBoard.LocationsX[71] = 235;
+            PlayBoard.LocationsY[71] = 504;
 
-            PlayBoard.LocationsX[72] = 883;
-            PlayBoard.LocationsY[72] = 670;
+            PlayBoard.LocationsX[72] = 281;
+            PlayBoard.LocationsY[72] = 508;
 
-            PlayBoard.LocationsX[73] = 883;
-            PlayBoard.LocationsY[73] = 670;
+            PlayBoard.LocationsX[73] = 319;
+            PlayBoard.LocationsY[73] = 494;
 
-            PlayBoard.LocationsX[74] = 883;
-            PlayBoard.LocationsY[74] = 670;
+            PlayBoard.LocationsX[74] = 326;
+            PlayBoard.LocationsY[74] = 449;
 
-            PlayBoard.LocationsX[75] = 883;
-            PlayBoard.LocationsY[75] = 670;
+            PlayBoard.LocationsX[75] = 297;
+            PlayBoard.LocationsY[75] = 413;
 
-            PlayBoard.LocationsX[76] = 883;
-            PlayBoard.LocationsY[76] = 670;
+            PlayBoard.LocationsX[76] = 258;
+            PlayBoard.LocationsY[76] = 392;
 
-            PlayBoard.LocationsX[77] = 883;
-            PlayBoard.LocationsY[77] = 670;
+            PlayBoard.LocationsX[77] = 225;
+            PlayBoard.LocationsY[77] = 361;
 
-            PlayBoard.LocationsX[78] = 883;
-            PlayBoard.LocationsY[78] = 670;
+            PlayBoard.LocationsX[78] = 230;
+            PlayBoard.LocationsY[78] = 311;
 
-            PlayBoard.LocationsX[79] = 883;
-            PlayBoard.LocationsY[79] = 670;
+            PlayBoard.LocationsX[79] = 262;
+            PlayBoard.LocationsY[79] = 283;
 
-            PlayBoard.LocationsX[80] = 883;
-            PlayBoard.LocationsY[80] = 670;
+            PlayBoard.LocationsX[80] = 308;
+            PlayBoard.LocationsY[80] = 270;
 
-            PlayBoard.LocationsX[80] = 883;
-            PlayBoard.LocationsY[80] = 670;
+            PlayBoard.LocationsX[81] = 352;
+            PlayBoard.LocationsY[81] = 273;
 
-            PlayBoard.LocationsX[81] = 883;
-            PlayBoard.LocationsY[81] = 670;
+            PlayBoard.LocationsX[82] = 394;
+            PlayBoard.LocationsY[82] = 281;
 
-            PlayBoard.LocationsX[82] = 883;
-            PlayBoard.LocationsY[82] = 670;
+            PlayBoard.LocationsX[83] = 438;
+            PlayBoard.LocationsY[83] = 202;
 
-            PlayBoard.LocationsX[83] = 883;
-            PlayBoard.LocationsY[83] = 670;
+            PlayBoard.LocationsX[84] = 479;
+            PlayBoard.LocationsY[84] = 324;
 
-            PlayBoard.LocationsX[84] = 883;
-            PlayBoard.LocationsY[84] = 670;
+            PlayBoard.LocationsX[85] = 521;
+            PlayBoard.LocationsY[85] = 347;
 
-            PlayBoard.LocationsX[85] = 883;
-            PlayBoard.LocationsY[85] = 670;
+            PlayBoard.LocationsX[86] = 561;
+            PlayBoard.LocationsY[86] = 370;//STUCK
 
-            PlayBoard.LocationsX[86] = 883;
-            PlayBoard.LocationsY[86] = 670;
+            PlayBoard.LocationsX[87] = 605;
+            PlayBoard.LocationsY[87] = 386;
 
-            PlayBoard.LocationsX[87] = 883;
-            PlayBoard.LocationsY[87] = 670;
+            PlayBoard.LocationsX[88] = 649;
+            PlayBoard.LocationsY[88] = 400;
 
-            PlayBoard.LocationsX[88] = 883;
-            PlayBoard.LocationsY[88] = 670;
+            PlayBoard.LocationsX[89] = 695;
+            PlayBoard.LocationsY[89] = 411;
 
-            PlayBoard.LocationsX[89] = 883;
-            PlayBoard.LocationsY[89] = 670;
+            PlayBoard.LocationsX[90] = 741;
+            PlayBoard.LocationsY[90] = 417;
 
-            PlayBoard.LocationsX[90] = 883;
-            PlayBoard.LocationsY[90] = 670;
+            PlayBoard.LocationsX[91] = 788;
+            PlayBoard.LocationsY[91] = 425;
 
-            PlayBoard.LocationsX[91] = 883;
-            PlayBoard.LocationsY[91] = 670;
+            PlayBoard.LocationsX[92] = 835;
+            PlayBoard.LocationsY[92] = 426;//SPECIAL magnifying glass
 
-            PlayBoard.LocationsX[92] = 883;
-            PlayBoard.LocationsY[92] = 670;
+            PlayBoard.LocationsX[93] = 882;
+            PlayBoard.LocationsY[93] = 426;
 
-            PlayBoard.LocationsX[93] = 883;
-            PlayBoard.LocationsY[93] = 670;
+            PlayBoard.LocationsX[94] = 926;
+            PlayBoard.LocationsY[94] = 413;
 
-            PlayBoard.LocationsX[94] = 883;
-            PlayBoard.LocationsY[94] = 670;
+            PlayBoard.LocationsX[95] = 968;
+            PlayBoard.LocationsY[95] = 397;
 
-            PlayBoard.LocationsX[95] = 883;
-            PlayBoard.LocationsY[95] = 670;
+            PlayBoard.LocationsX[96] = 996;
+            PlayBoard.LocationsY[96] = 363;
 
-            PlayBoard.LocationsX[96] = 883;
-            PlayBoard.LocationsY[96] = 670;
+            PlayBoard.LocationsX[97] = 1005;
+            PlayBoard.LocationsY[97] = 316;
 
-            PlayBoard.LocationsX[97] = 883;
-            PlayBoard.LocationsY[97] = 670;
+            PlayBoard.LocationsX[98] = 992;
+            PlayBoard.LocationsY[98] = 273;
 
-            PlayBoard.LocationsX[98] = 883;
-            PlayBoard.LocationsY[98] = 670;
+            PlayBoard.LocationsX[99] = 956;
+            PlayBoard.LocationsY[99] = 247;
 
-            PlayBoard.LocationsX[99] = 883;
-            PlayBoard.LocationsY[99] = 670;
+            PlayBoard.LocationsX[100] = 919;
+            PlayBoard.LocationsY[100] = 221;
 
-            PlayBoard.LocationsX[100] = 883;
-            PlayBoard.LocationsY[100] = 670;
+            PlayBoard.LocationsX[101] = 903;
+            PlayBoard.LocationsY[101] = 177;
 
-            PlayBoard.LocationsX[101] = 883;
-            PlayBoard.LocationsY[101] = 670;
+            PlayBoard.LocationsX[102] = 882;
+            PlayBoard.LocationsY[102] = 137;//SPECIAL ice cream
 
-            PlayBoard.LocationsX[102] = 883;
-            PlayBoard.LocationsY[102] = 670;
+            PlayBoard.LocationsX[103] = 841;
+            PlayBoard.LocationsY[103] = 117;
 
-            PlayBoard.LocationsX[103] = 883;
-            PlayBoard.LocationsY[103] = 670;
+            PlayBoard.LocationsX[104] = 794;
+            PlayBoard.LocationsY[104] = 131;
 
-            PlayBoard.LocationsX[104] = 883;
-            PlayBoard.LocationsY[104] = 670;
+            PlayBoard.LocationsX[105] = 763;
+            PlayBoard.LocationsY[105] = 163;
 
-            PlayBoard.LocationsX[105] = 883;
-            PlayBoard.LocationsY[105] = 670;
+            PlayBoard.LocationsX[106] = 743;
+            PlayBoard.LocationsY[106] = 208;
 
-            PlayBoard.LocationsX[106] = 883;
-            PlayBoard.LocationsY[106] = 670;
+            PlayBoard.LocationsX[107] = 722;
+            PlayBoard.LocationsY[107] = 248;
 
-            PlayBoard.LocationsX[107] = 883;
-            PlayBoard.LocationsY[107] = 670;
+            PlayBoard.LocationsX[108] = 695;
+            PlayBoard.LocationsY[108] = 285;
 
-            PlayBoard.LocationsX[108] = 883;
-            PlayBoard.LocationsY[108] = 670;
+            PlayBoard.LocationsX[109] = 657;
+            PlayBoard.LocationsY[109] = 312;
 
-            PlayBoard.LocationsX[109] = 883;
-            PlayBoard.LocationsY[109] = 670;
+            PlayBoard.LocationsX[110] = 609;
+            PlayBoard.LocationsY[110] = 318;
 
-            PlayBoard.LocationsX[110] = 883;
-            PlayBoard.LocationsY[110] = 670;
+            PlayBoard.LocationsX[111] = 565;
+            PlayBoard.LocationsY[111] = 302;
 
-            PlayBoard.LocationsX[111] = 883;
-            PlayBoard.LocationsY[111] = 670;
+            PlayBoard.LocationsX[112] = 526;
+            PlayBoard.LocationsY[112] = 282;
 
-            PlayBoard.LocationsX[112] = 883;
-            PlayBoard.LocationsY[112] = 670;
+            PlayBoard.LocationsX[113] = 486;
+            PlayBoard.LocationsY[113] = 255;
 
-            PlayBoard.LocationsX[113] = 883;
-            PlayBoard.LocationsY[113] = 670;
+            PlayBoard.LocationsX[114] = 448;
+            PlayBoard.LocationsY[114] = 230;
 
-            PlayBoard.LocationsX[114] = 883;
-            PlayBoard.LocationsY[114] = 670;
+            PlayBoard.LocationsX[115] = 404;
+            PlayBoard.LocationsY[115] = 216;
 
-            PlayBoard.LocationsX[115] = 883;
-            PlayBoard.LocationsY[115] = 670;
+            PlayBoard.LocationsX[116] = 357;
+            PlayBoard.LocationsY[116] = 209;
 
-            PlayBoard.LocationsX[116] = 883;
-            PlayBoard.LocationsY[116] = 670;
+            PlayBoard.LocationsX[117] = 312;
+            PlayBoard.LocationsY[117] = 213;
 
-            PlayBoard.LocationsX[117] = 883;
-            PlayBoard.LocationsY[117] = 670;
+            PlayBoard.LocationsX[118] = 267;
+            PlayBoard.LocationsY[118] = 221;
 
-            PlayBoard.LocationsX[118] = 883;
-            PlayBoard.LocationsY[118] = 670;
+            PlayBoard.LocationsX[119] = 223;
+            PlayBoard.LocationsY[119] = 225;
 
-            PlayBoard.LocationsX[119] = 883;
-            PlayBoard.LocationsY[119] = 670;
+            PlayBoard.LocationsX[120] = 179;
+            PlayBoard.LocationsY[120] = 225;
 
-            PlayBoard.LocationsX[120] = 883;
-            PlayBoard.LocationsY[120] = 670;
+            PlayBoard.LocationsX[121] = 138;
+            PlayBoard.LocationsY[121] = 218;
 
-            PlayBoard.LocationsX[121] = 883;
-            PlayBoard.LocationsY[121] = 670;
+            PlayBoard.LocationsX[122] = 102;
+            PlayBoard.LocationsY[122] = 198;
 
-            PlayBoard.LocationsX[122] = 883;
-            PlayBoard.LocationsY[122] = 670;
+            PlayBoard.LocationsX[123] = 81;
+            PlayBoard.LocationsY[123] = 164;
 
-            PlayBoard.LocationsX[123] = 883;
-            PlayBoard.LocationsY[123] = 670;
+            PlayBoard.LocationsX[124] = 77;
+            PlayBoard.LocationsY[124] = 114;
 
-            PlayBoard.LocationsX[124] = 883;
-            PlayBoard.LocationsY[124] = 670;
+            PlayBoard.LocationsX[125] = 90;
+            PlayBoard.LocationsY[125] = 72;
 
-            PlayBoard.LocationsX[125] = 883;
-            PlayBoard.LocationsY[125] = 670;
+            PlayBoard.LocationsX[126] = 125;
+            PlayBoard.LocationsY[126] = 44;
 
-            PlayBoard.LocationsX[126] = 883;
-            PlayBoard.LocationsY[126] = 670;
+            PlayBoard.LocationsX[127] = 167;
+            PlayBoard.LocationsY[127] = 25;
 
-            PlayBoard.LocationsX[127] = 883;
-            PlayBoard.LocationsY[127] = 670;
+            PlayBoard.LocationsX[128] = 211;
+            PlayBoard.LocationsY[128] = 24;
 
-            PlayBoard.LocationsX[128] = 883;
-            PlayBoard.LocationsY[128] = 670;
+            PlayBoard.LocationsX[129] = 253;
+            PlayBoard.LocationsY[129] = 33;
 
-            PlayBoard.LocationsX[129] = 883;
-            PlayBoard.LocationsY[129] = 670;
+            PlayBoard.LocationsX[130] = 291;
+            PlayBoard.LocationsY[130] = 56;
 
-            PlayBoard.LocationsX[130] = 883;
-            PlayBoard.LocationsY[130] = 670;
+            PlayBoard.LocationsX[131] = 327;
+            PlayBoard.LocationsY[131] = 82;
 
-            PlayBoard.LocationsX[131] = 883;
-            PlayBoard.LocationsY[131] = 670;
+            PlayBoard.LocationsX[132] = 363;
+            PlayBoard.LocationsY[132] = 109;
 
-            PlayBoard.LocationsX[132] = 883;
-            PlayBoard.LocationsY[132] = 670;
+            PlayBoard.LocationsX[133] = 403;
+            PlayBoard.LocationsY[133] = 127;
 
-            PlayBoard.LocationsX[133] = 883;
-            PlayBoard.LocationsY[133] = 670;
-
-            PlayBoard.LocationsX[134] = 883;
-            PlayBoard.LocationsY[134] = 670;
+            PlayBoard.LocationsX[134] = 448;
+            PlayBoard.LocationsY[134] = 147;
             // End of plotting out points in array
 
             //fill the locationcolor array with the correct color
@@ -496,9 +497,10 @@ namespace Game_CandyLand
             
             //testing the movement on some random locations
             outputlog_lbl.Text = "Arrays initialized...";
-            label3.Location = new Point(PlayBoard.LocationsX[35], PlayBoard.LocationsY[35]);
-            label1.Location = new Point(PlayBoard.LocationsX[0],PlayBoard.LocationsY[0]);
-            label2.Location = new Point(PlayBoard.LocationsX[20],PlayBoard.LocationsY[20]);
+            label3.Location = new Point(62,713);
+            label4.Location = new Point(147,801);
+            label2.Location = new Point(147,713);
+            label1.Location = new Point(62,801);
             outputlog_lbl.Text = "Players moved...";
 
         }
@@ -513,5 +515,12 @@ namespace Game_CandyLand
                 Application.Exit();
             }
         }
+
+        private void Draw_btn_Click(object sender, EventArgs e)
+        {
+            Deck CardDeck = new Deck();
+            CardDeck.Draw();
+        }
+
     }
 }
