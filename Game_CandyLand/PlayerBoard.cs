@@ -494,6 +494,15 @@ namespace Game_CandyLand
                 j = 0;
                 colorcounter++;
             }
+            //add the special locations to the array
+            PlayBoard.LocationsColor[9] = "GingerbreadMan";
+            PlayBoard.LocationsColor[20] = "Candy Cane";
+            PlayBoard.LocationsColor[42] = "Gumdrop";
+            PlayBoard.LocationsColor[69] = "Peanut Brittle";
+            PlayBoard.LocationsColor[92] = "Ice Cream";
+            PlayBoard.LocationsColor[102] = "Lolly";
+            PlayBoard.LocationsColor[133] = "Red";
+            PlayBoard.LocationsColor[134] = "Finish";
             
             //testing the movement on some random locations
             outputlog_lbl.Text = "Arrays initialized...";

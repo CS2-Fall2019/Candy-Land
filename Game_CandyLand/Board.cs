@@ -24,7 +24,7 @@ namespace Game_CandyLand
         public int[] Locations = new int[135];
         public  int[] LocationsX = new int[135];
         public int[] LocationsY = new int[135];
-        public string[] LocationsColor = new string[134];
+        public string[] LocationsColor = new string[135];
 
         // Method to move the Player on the board
         public void MovePlayer()
