@@ -27,16 +27,13 @@ namespace Game_CandyLand
         public void Draw()
         {
             // Check current player property. -- check player method
-            CurrentPlayerTurn();
+           
 
             Random yourCard = new Random(66);
-            int thisCard = yourCard.;
+            int thisCard = 1;
 
             // Generate random number between 0 and Cards.length.
-            while (CardsUsed[] != null)
-            {
-                if ()
-            }
+            
 
             // Check the CardsUsed array to see if element is null. (Use a while loop)
             
