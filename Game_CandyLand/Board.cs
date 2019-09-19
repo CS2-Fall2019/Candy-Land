@@ -27,11 +27,7 @@ namespace Game_CandyLand
         public string[] LocationsColor = new string[135];
 
         // Method to move the Player on the board
-        public void MovePlayer()
-        {
-
-
-        }
+       
 
         // Lose a Turn - will look something like this. so no one is stuck infinitely we only change stuck to true if its false. it should remove after one turn
         /*

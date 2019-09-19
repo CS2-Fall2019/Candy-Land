@@ -170,7 +170,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(926, 795);
             this.Name = "PlayerBoard";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CandyLand";
             ((System.ComponentModel.ISupportInitialize)(this.GameBoard_picbox)).EndInit();

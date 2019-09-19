@@ -48,7 +48,7 @@ namespace Game_CandyLand
         //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
         // Draw method.
-        public void Draw()
+        public string Draw()
         {
             // Check current player property. -- check player method
             // CurrentPlayerTurn();
@@ -100,7 +100,7 @@ namespace Game_CandyLand
 
                 // Call the MovePlayer method.
                 // MovePlayer(pickedCard, CurrentPlayer.PlayerNumber ); // Need to get player info from player class.
-
+                
             }
             else
             {
@@ -122,7 +122,7 @@ namespace Game_CandyLand
 
                 // Call the MovePlayer method.
                 // MovePlayer(pickedCard); // Need to get player info from player class.
-
+                
             }
 
             /*
@@ -175,7 +175,10 @@ namespace Game_CandyLand
                 // MovePlayer(pickedCard); // Need to get player info from player class.
             }
             */
-            MessageBox.Show(thisCard.ToString());
+            //MessageBox.Show(pickedCard);
+
+            return pickedCard;
+            
         }
     }
 }

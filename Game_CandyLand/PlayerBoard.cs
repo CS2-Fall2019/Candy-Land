@@ -25,8 +25,15 @@ namespace Game_CandyLand
 
         }
 
+        //create the deck and initialize it 
+        Deck CardDeck = new Deck();
+        Board PlayBoard = new Board();
+       
+
+
         private void Start_btn_Click(object sender, EventArgs e)
         {
+
             //set up locations for where each color is on the board
             int[] GreenLocations = new int[21] {6,13,19,26,32,38,45,51,57,63,70,76,82,88,95,101,107,114,120,126,132};
             int[] OrangeLocations = new int[21] {5,12,18,25,31,37,44,50,56,62,68,75,81,87,94,100,106,113,119,125,131};
@@ -34,10 +41,10 @@ namespace Game_CandyLand
             int[] YellowLocations = new int[21] {3,10,16,23,29,35,41,48,54,60,66,73,79,85,91,98,105,111,117,123,129};
             int[] PurpleLocations = new int[21] { 2, 8, 15, 22, 28, 34, 40, 47, 53, 59, 65, 72, 78, 84, 90, 97, 104, 110, 116, 122, 128 };
             int[] RedLocations = new int[22] {1,7,14,21,27,33,39,46,52,58,64,71,77,83,89,96,103,109,115,121,127,133};
-            int[] SpecialLocations = new int[6] {9,20,42,69,92,102};            
+            int[] SpecialLocations = new int[6] {9,20,42,69,92,102};
+
 
             //create the board and initialize it
-            Board PlayBoard = new Board();
             PlayBoard.Round = 1;
             PlayBoard.Leader = 1;
             PlayBoard.CurrentPlayer = 1;
@@ -457,6 +464,7 @@ namespace Game_CandyLand
             PlayBoard.LocationsY[134] = 147;
             // End of plotting out points in array
 
+
             //fill the locationcolor array with the correct color
             // this will make location[1] = locationcolor[1]. EX) Location[1] = LocationColor[1], where LocationColor[1] = "Red"
             int colorcounter = 0;
@@ -509,7 +517,7 @@ namespace Game_CandyLand
             label3.Location = new Point(62,713);
             label4.Location = new Point(147,801);
             label2.Location = new Point(147,713);
-            label1.Location = new Point(62,801);
+            label1.Location = new Point(PlayBoard.LocationsX[1],PlayBoard.LocationsY[1]);
             outputlog_lbl.Text = "Players moved...";
 
         }
@@ -527,9 +535,174 @@ namespace Game_CandyLand
 
         private void Draw_btn_Click(object sender, EventArgs e)
         {
-            Deck CardDeck = new Deck();
-            CardDeck.Draw();
+            
+            string currentCard = CardDeck.Draw();
+            MovePlayer(currentCard);
+            outputlog_lbl.Text = currentCard;
+
         }
 
+
+        int currentlocation = 0;
+        public void MovePlayer(string card)
+        {
+            //get players current location
+            int i = 1;
+            while (i < 135)
+            {
+                if (label1.Location == new Point(PlayBoard.LocationsX[i], PlayBoard.LocationsY[i]))
+                {
+                    currentlocation = i;
+                    break;
+                }
+                i++;
+            }
+            
+            int nextlocation = currentlocation + 1;
+            while (nextlocation < 135)
+            {
+
+                if (PlayBoard.LocationsColor[nextlocation] == card)
+                {
+                    label1.Location = new Point(PlayBoard.LocationsX[nextlocation], PlayBoard.LocationsY[nextlocation]);
+                    break;
+                }
+                else if (card == "Double Green")
+                {
+                    int firstlocation = nextlocation  + 1;
+                    while (firstlocation < 135)
+                    {
+                        if (PlayBoard.LocationsColor[firstlocation] == "Green")
+                        {
+                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            int doublelocation = firstlocation + 1;
+                            while (doublelocation < 135)
+                            {
+                                if (PlayBoard.LocationsColor[doublelocation] == "Green")
+                                {
+                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    return;
+                                }
+                                doublelocation++;
+                           }
+                        }
+                        firstlocation++;
+                    }
+                }
+                else if (card == "Double Yellow")
+                {
+                    int firstlocation = nextlocation + 1;
+                    while (firstlocation < 135)
+                    {
+                        if (PlayBoard.LocationsColor[firstlocation] == "Yellow")
+                        {
+                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            int doublelocation = firstlocation + 1;
+                            while (doublelocation < 135)
+                            {
+                                if (PlayBoard.LocationsColor[doublelocation] == "Yellow")
+                                {
+                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    return;
+                                }
+                                doublelocation++;
+                            }
+                        }
+                        firstlocation++;
+                    }
+                }
+                else if (card == "Double Red")
+                {
+                    int firstlocation = nextlocation + 1;
+                    while (firstlocation < 135)
+                    {
+                        if (PlayBoard.LocationsColor[firstlocation] == "Red")
+                        {
+                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            int doublelocation = firstlocation + 1;
+                            while (doublelocation < 135)
+                            {
+                                if (PlayBoard.LocationsColor[doublelocation] == "Red")
+                                {
+                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    return;
+                                }
+                                doublelocation++;
+                            }
+                        }
+                        firstlocation++;
+                    }
+                }
+                else if (card == "Double Purple")
+                {
+                    int firstlocation = nextlocation + 1;
+                    while (firstlocation < 135)
+                    {
+                        if (PlayBoard.LocationsColor[firstlocation] == "Purple")
+                        {
+                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            int doublelocation = firstlocation + 1;
+                            while (doublelocation < 135)
+                            {
+                                if (PlayBoard.LocationsColor[doublelocation] == "Purple")
+                                {
+                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    return;
+                                }
+                                doublelocation++;
+                            }
+                        }
+                        firstlocation++;
+                    }
+                }
+                else if (card == "Double Blue")
+                {
+                    int firstlocation = nextlocation + 1;
+                    while (firstlocation < 135)
+                    {
+                        if (PlayBoard.LocationsColor[firstlocation] == "Blue")
+                        {
+                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            int doublelocation = firstlocation + 1;
+                            while (doublelocation < 135)
+                            {
+                                if (PlayBoard.LocationsColor[doublelocation] == "Blue")
+                                {
+                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    return;
+                                }
+                                doublelocation++;
+                            }
+                        }
+                        firstlocation++;
+                    }
+                }
+                else if (card == "Double Orange")
+                {
+                    int firstlocation = nextlocation + 1;
+                    while (firstlocation < 135)
+                    {
+                        if (PlayBoard.LocationsColor[firstlocation] == "Orange")
+                        {
+                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            int doublelocation = firstlocation + 1;
+                            while (doublelocation < 135)
+                            {
+                                if (PlayBoard.LocationsColor[doublelocation] == "Orange")
+                                {
+                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    return;
+                                }
+                                doublelocation++;
+                            }
+                        }
+                        firstlocation++;
+                    }
+                }
+
+                nextlocation++;
+            }
+
+        }
     }
 }
