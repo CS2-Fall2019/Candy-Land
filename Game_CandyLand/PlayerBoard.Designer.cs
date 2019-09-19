@@ -60,7 +60,7 @@
             this.Draw_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Draw_btn.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Draw_btn.ForeColor = System.Drawing.Color.HotPink;
-            this.Draw_btn.Location = new System.Drawing.Point(1223, 814);
+            this.Draw_btn.Location = new System.Drawing.Point(1251, 160);
             this.Draw_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Draw_btn.Name = "Draw_btn";
             this.Draw_btn.Size = new System.Drawing.Size(105, 45);
@@ -75,7 +75,7 @@
             this.Start_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Start_btn.Font = new System.Drawing.Font("Showcard Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Start_btn.ForeColor = System.Drawing.Color.HotPink;
-            this.Start_btn.Location = new System.Drawing.Point(1298, 766);
+            this.Start_btn.Location = new System.Drawing.Point(1311, 233);
             this.Start_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Start_btn.Name = "Start_btn";
             this.Start_btn.Size = new System.Drawing.Size(67, 31);
@@ -99,7 +99,7 @@
             this.Exit_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Exit_btn.Font = new System.Drawing.Font("Showcard Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit_btn.ForeColor = System.Drawing.Color.HotPink;
-            this.Exit_btn.Location = new System.Drawing.Point(1227, 766);
+            this.Exit_btn.Location = new System.Drawing.Point(1223, 233);
             this.Exit_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Exit_btn.Name = "Exit_btn";
             this.Exit_btn.Size = new System.Drawing.Size(67, 31);
@@ -112,7 +112,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1224, 703);
+            this.label1.Location = new System.Drawing.Point(1246, 305);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 47);
             this.label1.TabIndex = 5;
@@ -123,7 +123,7 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1224, 636);
+            this.label2.Location = new System.Drawing.Point(1334, 305);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 47);
             this.label2.TabIndex = 6;
@@ -134,7 +134,7 @@
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1224, 571);
+            this.label3.Location = new System.Drawing.Point(1248, 383);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 47);
             this.label3.TabIndex = 7;
@@ -145,7 +145,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(1224, 497);
+            this.label4.Location = new System.Drawing.Point(1344, 383);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 47);
             this.label4.TabIndex = 8;
