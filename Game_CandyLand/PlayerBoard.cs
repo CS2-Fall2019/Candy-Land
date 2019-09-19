@@ -499,7 +499,7 @@ namespace Game_CandyLand
             PlayBoard.LocationsColor[20] = "Candy Cane";
             PlayBoard.LocationsColor[42] = "Gumdrop";
             PlayBoard.LocationsColor[69] = "Peanut Brittle";
-            PlayBoard.LocationsColor[92] = "Ice Cream";
+            PlayBoard.LocationsColor[92] = "Princess Frostine";
             PlayBoard.LocationsColor[102] = "Lolly";
             PlayBoard.LocationsColor[133] = "Red";
             PlayBoard.LocationsColor[134] = "Finish";

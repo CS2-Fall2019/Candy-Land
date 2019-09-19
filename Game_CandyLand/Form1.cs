@@ -24,7 +24,7 @@ namespace Game_CandyLand
 
             //Set up the new form which will be the play area for the game
             PlayerBoard PlayArea = new PlayerBoard();
-            PlayArea.Width = 1220;
+            PlayArea.Width = 1500;
             PlayArea.Height = 985;
             PlayArea.ShowDialog();
 
