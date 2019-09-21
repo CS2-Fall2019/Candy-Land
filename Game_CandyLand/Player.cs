@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Program.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

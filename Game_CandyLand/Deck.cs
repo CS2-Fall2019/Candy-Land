@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Deck.cs" company="Triple B & S">
-//     Copyright (c) Triple B & S. All rights reserved.
+// <copyright file="Program.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 

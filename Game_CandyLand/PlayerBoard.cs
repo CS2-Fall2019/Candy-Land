@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Program.cs" company="Triple B & Schulze">
-//     Copyright (c) Biles & Schulze. All rights reserved.
+// <copyright file="Program.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
@@ -36,10 +36,10 @@ namespace Game_CandyLand
 
             //set up locations for where each color is on the board
             int[] GreenLocations = new int[21] {6,13,19,26,32,38,45,51,57,63,70,76,82,88,95,101,107,114,120,126,132};
-            int[] OrangeLocations = new int[21] {5,12,18,25,31,37,44,50,56,62,68,75,81,87,94,100,106,113,119,125,131};
-            int[] BlueLocations = new int[21] { 4, 11, 17, 24, 30, 36, 43, 49, 55, 61, 67, 74, 80, 86, 93, 99, 105, 112, 118, 124, 130 };
+            int[] OrangeLocations = new int[21] {5,12,18,25,31,37,44,50,56,62,68,75,81,87,94,100,107,113,119,125,131};
+            int[] BlueLocations = new int[21] {4,11,17,24,30,36,43,49,55,61,67,74,80,86,93,99,106,112,118,124,130};
             int[] YellowLocations = new int[21] {3,10,16,23,29,35,41,48,54,60,66,73,79,85,91,98,105,111,117,123,129};
-            int[] PurpleLocations = new int[21] { 2, 8, 15, 22, 28, 34, 40, 47, 53, 59, 65, 72, 78, 84, 90, 97, 104, 110, 116, 122, 128 };
+            int[] PurpleLocations = new int[21] {2,8,15,22,28,34,40,47,53,59,65,72,78,84,90,97,104,110,116,122,128};
             int[] RedLocations = new int[22] {1,7,14,21,27,33,39,46,52,58,64,71,77,83,89,96,103,109,115,121,127,133};
             int[] SpecialLocations = new int[6] {9,20,42,69,92,102};
 
@@ -308,7 +308,7 @@ namespace Game_CandyLand
             PlayBoard.LocationsY[82] = 281;
 
             PlayBoard.LocationsX[83] = 438;
-            PlayBoard.LocationsY[83] = 202;
+            PlayBoard.LocationsY[83] = 302;
 
             PlayBoard.LocationsX[84] = 479;
             PlayBoard.LocationsY[84] = 324;
@@ -507,8 +507,8 @@ namespace Game_CandyLand
             PlayBoard.LocationsColor[20] = "Candy Cane";
             PlayBoard.LocationsColor[42] = "Gumdrop";
             PlayBoard.LocationsColor[69] = "Peanut Brittle";
-            PlayBoard.LocationsColor[92] = "Princess Frostine";
-            PlayBoard.LocationsColor[102] = "Lolly";
+            PlayBoard.LocationsColor[92] = "Lolly";
+            PlayBoard.LocationsColor[102] = "Princess Frostine";
             PlayBoard.LocationsColor[133] = "Red";
             PlayBoard.LocationsColor[134] = "Finish";
             
@@ -516,7 +516,8 @@ namespace Game_CandyLand
             outputlog_lbl.Text = "Arrays initialized...";
             label3.Location = new Point(62,713);
             label4.Location = new Point(147,801);
-            label2.Location = new Point(147,713);
+            label2.Location = new Point(PlayBoard.LocationsX[106], PlayBoard.LocationsY[106]);
+            MessageBox.Show(PlayBoard.LocationsColor[105] + PlayBoard.LocationsColor[106] + PlayBoard.LocationsColor[107]); //debugging
             label1.Location = new Point(PlayBoard.LocationsX[1],PlayBoard.LocationsY[1]);
             outputlog_lbl.Text = "Players moved...";
 
@@ -535,11 +536,9 @@ namespace Game_CandyLand
 
         private void Draw_btn_Click(object sender, EventArgs e)
         {
-            
             string currentCard = CardDeck.Draw();
             MovePlayer(currentCard);
             outputlog_lbl.Text = currentCard;
-
         }
 
 
@@ -569,7 +568,7 @@ namespace Game_CandyLand
                 }
                 else if (card == "Double Green")
                 {
-                    int firstlocation = nextlocation  + 1;
+                    int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
                         if (PlayBoard.LocationsColor[firstlocation] == "Green")
@@ -591,7 +590,7 @@ namespace Game_CandyLand
                 }
                 else if (card == "Double Yellow")
                 {
-                    int firstlocation = nextlocation + 1;
+                    int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
                         if (PlayBoard.LocationsColor[firstlocation] == "Yellow")
@@ -613,7 +612,7 @@ namespace Game_CandyLand
                 }
                 else if (card == "Double Red")
                 {
-                    int firstlocation = nextlocation + 1;
+                    int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
                         if (PlayBoard.LocationsColor[firstlocation] == "Red")
@@ -635,7 +634,7 @@ namespace Game_CandyLand
                 }
                 else if (card == "Double Purple")
                 {
-                    int firstlocation = nextlocation + 1;
+                    int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
                         if (PlayBoard.LocationsColor[firstlocation] == "Purple")
@@ -657,7 +656,7 @@ namespace Game_CandyLand
                 }
                 else if (card == "Double Blue")
                 {
-                    int firstlocation = nextlocation + 1;
+                    int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
                         if (PlayBoard.LocationsColor[firstlocation] == "Blue")
@@ -679,7 +678,7 @@ namespace Game_CandyLand
                 }
                 else if (card == "Double Orange")
                 {
-                    int firstlocation = nextlocation + 1;
+                    int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
                         if (PlayBoard.LocationsColor[firstlocation] == "Orange")
@@ -699,10 +698,8 @@ namespace Game_CandyLand
                         firstlocation++;
                     }
                 }
-
                 nextlocation++;
             }
-
         }
     }
 }

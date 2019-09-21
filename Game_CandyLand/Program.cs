@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Program.cs" company="Triple B & Schulze">
-//     Copyright (c) Biles & Schulze. All rights reserved.
+// <copyright file="Program.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
