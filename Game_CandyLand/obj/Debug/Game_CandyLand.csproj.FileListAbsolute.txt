@@ -31,14 +31,14 @@ C:\Users\Ian Burroughs\Desktop\Fall 2019\C# Part2\CandyLand\CandyLandMaster\Game
 C:\Users\Ian Burroughs\Desktop\Fall 2019\C# Part2\CandyLand\CandyLandMaster\Game_CandyLand\Game_CandyLand\obj\Debug\Game_CandyLand.csproj.CoreCompileInputs.cache
 C:\Users\Ian Burroughs\Desktop\Fall 2019\C# Part2\CandyLand\CandyLandMaster\Game_CandyLand\Game_CandyLand\obj\Debug\Game_CandyLand.exe
 C:\Users\Ian Burroughs\Desktop\Fall 2019\C# Part2\CandyLand\CandyLandMaster\Game_CandyLand\Game_CandyLand\obj\Debug\Game_CandyLand.pdb
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\bin\Debug\Game_CandyLand.exe.config
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\bin\Debug\Game_CandyLand.exe
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\bin\Debug\Game_CandyLand.pdb
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\obj\Debug\Game_CandyLand.csprojAssemblyReference.cache
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\obj\Debug\Game_CandyLand.CandyLandGame.resources
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\obj\Debug\Game_CandyLand.PlayerBoard.resources
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\obj\Debug\Game_CandyLand.Properties.Resources.resources
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\obj\Debug\Game_CandyLand.csproj.GenerateResource.cache
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\obj\Debug\Game_CandyLand.csproj.CoreCompileInputs.cache
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\obj\Debug\Game_CandyLand.exe
-C:\Users\james.schulze\Desktop\C#2\Candy-Land\Candy-Land\Game_CandyLand\obj\Debug\Game_CandyLand.pdb
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\bin\Debug\Game_CandyLand.exe.config
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\bin\Debug\Game_CandyLand.exe
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\obj\Debug\Game_CandyLand.csprojAssemblyReference.cache
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\obj\Debug\Game_CandyLand.CandyLandGame.resources
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\obj\Debug\Game_CandyLand.PlayerBoard.resources
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\obj\Debug\Game_CandyLand.Properties.Resources.resources
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\obj\Debug\Game_CandyLand.csproj.GenerateResource.cache
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\obj\Debug\Game_CandyLand.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\obj\Debug\Game_CandyLand.exe
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\obj\Debug\Game_CandyLand.pdb
+C:\Users\Owner\Documents\C#2\CandyLand\Candy-Land-master\Game_CandyLand\bin\Debug\Game_CandyLand.pdb
