@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Program.cs" company="Triple B & Schulze">
-//     Copyright (c) Biles & Schulze. All rights reserved.
+// <copyright file="Program.cs" company="Triple B & S">
+//     Copyright (c) Triple B & S. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
