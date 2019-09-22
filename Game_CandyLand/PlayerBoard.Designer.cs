@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerBoard));
             this.GameBoard_picbox = new System.Windows.Forms.PictureBox();
             this.Draw_btn = new System.Windows.Forms.Button();
@@ -38,7 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.imgListCards = new System.Windows.Forms.ImageList(this.components);
+            this.pbxCardDisplay = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GameBoard_picbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCardDisplay)).BeginInit();
             this.SuspendLayout();
             // 
             // GameBoard_picbox
@@ -152,12 +156,46 @@
             this.label4.Text = "Player4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // imgListCards
+            // 
+            this.imgListCards.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListCards.ImageStream")));
+            this.imgListCards.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListCards.Images.SetKeyName(0, "Green.png");
+            this.imgListCards.Images.SetKeyName(1, "Double Green.png");
+            this.imgListCards.Images.SetKeyName(2, "Red.png");
+            this.imgListCards.Images.SetKeyName(3, "Double Red.png");
+            this.imgListCards.Images.SetKeyName(4, "Orange.png");
+            this.imgListCards.Images.SetKeyName(5, "Double Orange.png");
+            this.imgListCards.Images.SetKeyName(6, "Blue.png");
+            this.imgListCards.Images.SetKeyName(7, "Double Blue.png");
+            this.imgListCards.Images.SetKeyName(8, "Purple.jpeg");
+            this.imgListCards.Images.SetKeyName(9, "Double Purple.jpeg");
+            this.imgListCards.Images.SetKeyName(10, "Yellow.png");
+            this.imgListCards.Images.SetKeyName(11, "Double Yellow.png");
+            this.imgListCards.Images.SetKeyName(12, "Peppermint.png");
+            this.imgListCards.Images.SetKeyName(13, "Peanut.png");
+            this.imgListCards.Images.SetKeyName(14, "Lollipop.png");
+            this.imgListCards.Images.SetKeyName(15, "Ice Cream.png");
+            this.imgListCards.Images.SetKeyName(16, "Gum Drop.png");
+            this.imgListCards.Images.SetKeyName(17, "GingerBreadMan.png");
+            // 
+            // pbxCardDisplay
+            // 
+            this.pbxCardDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxCardDisplay.Location = new System.Drawing.Point(1224, 490);
+            this.pbxCardDisplay.Name = "pbxCardDisplay";
+            this.pbxCardDisplay.Size = new System.Drawing.Size(100, 170);
+            this.pbxCardDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbxCardDisplay.TabIndex = 9;
+            this.pbxCardDisplay.TabStop = false;
+            // 
             // PlayerBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1467, 902);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.pbxCardDisplay);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -168,12 +206,13 @@
             this.Controls.Add(this.Draw_btn);
             this.Controls.Add(this.GameBoard_picbox);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(926, 795);
+            this.MinimumSize = new System.Drawing.Size(926, 726);
             this.Name = "PlayerBoard";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CandyLand";
             ((System.ComponentModel.ISupportInitialize)(this.GameBoard_picbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCardDisplay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +229,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ImageList imgListCards;
+        private System.Windows.Forms.PictureBox pbxCardDisplay;
     }
 }

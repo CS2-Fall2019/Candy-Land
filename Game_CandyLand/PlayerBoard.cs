@@ -529,6 +529,80 @@ namespace Game_CandyLand
         {
             Deck CardDeck = new Deck();
             CardDeck.Draw();
+
+            // Display Card in picture box from corresponding element of image list.
+            if (CardDeck.CurrentCard == "Green")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[0];
+            }
+            else if (CardDeck.CurrentCard == "Double Green")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[1];
+            }
+            else if (CardDeck.CurrentCard == "Red")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[2];
+            }
+            else if (CardDeck.CurrentCard == "Double Red")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[3];
+            }
+            else if (CardDeck.CurrentCard == "Orange")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[4];
+            }
+            else if (CardDeck.CurrentCard == "Double Orange")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[5];
+            }
+            else if (CardDeck.CurrentCard == "Blue")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[6];
+            }
+            else if (CardDeck.CurrentCard == "Double Blue")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[7];
+            }
+            else if (CardDeck.CurrentCard == "Purple")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[8];
+            }
+            else if (CardDeck.CurrentCard == "Double Purple")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[9];
+            }
+            else if (CardDeck.CurrentCard == "Yellow")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[10];
+            }
+            else if (CardDeck.CurrentCard == "Double Yellow")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[11];
+            }
+            else if (CardDeck.CurrentCard == "Candy Cane")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[12];
+            }
+            else if (CardDeck.CurrentCard == "Peanut Brittle")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[13];
+            }
+            else if (CardDeck.CurrentCard == "Lolly")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[14];
+            }
+            else if (CardDeck.CurrentCard == "Princess Frostine")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[15];
+            }
+            else if (CardDeck.CurrentCard == "Gumdrop")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[16];
+            }
+            else if (CardDeck.CurrentCard == "Plum")
+            {
+                pbxCardDisplay.Image = imgListCards.Images[17];
+            }
         }
 
     }
