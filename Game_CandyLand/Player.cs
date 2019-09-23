@@ -1,4 +1,8 @@
-﻿
+﻿//-----------------------------------------------------------------------
+// <copyright file="Program.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace Game_CandyLand
 {
@@ -8,7 +12,7 @@ namespace Game_CandyLand
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Player
+    class Player
     {
         // Position field.
         public int Position;
@@ -24,8 +28,5 @@ namespace Game_CandyLand
 
         // Stuck field.
         public bool Stuck;
-
-        // DisplayPosition method.
-
     }
 }

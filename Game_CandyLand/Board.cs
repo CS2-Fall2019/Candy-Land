@@ -1,4 +1,9 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Board.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,11 +32,7 @@ namespace Game_CandyLand
         public string[] LocationsColor = new string[135];
 
         // Method to move the Player on the board
-        public void MovePlayer()
-        {
 
-
-        }
 
         // Lose a Turn - will look something like this. so no one is stuck infinitely we only change stuck to true if its false. it should remove after one turn
         /*
@@ -50,13 +51,30 @@ namespace Game_CandyLand
             {
                 //logic to remove turn here
                 //probably remove from 
+
+                // Add 1 to currentPlayer to move to the next player, 
+                // if the current player was the last one then move back to the first player.
+                if (NumberOfPlayers == 1)
+                {
+                    // Do nothing because the next player can't be called if there's only one player.
+                }
+                else if (CurrentPlayer == NumberOfPlayers)
+                {
+                    CurrentPlayer = 1;
+                }
+                else
+                {
+                    CurrentPlayer += 1;
+                }
+
             }
         }
         */
 
         public void CurrentPlayerTurn()
         {
-            
+
+
         }
     }
 }

@@ -1,10 +1,8 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Deck.cs" company="Triple B & S">
-//     Copyright (c) Triple B & S. All rights reserved.
+// <copyright file="Program.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-
-using System.Windows.Forms;
 
 namespace Game_CandyLand
 {
@@ -17,14 +15,11 @@ namespace Game_CandyLand
 
     public class Deck
     {
-        // todo should Current Card be a string not an int?
-        // todo Current Card needs to be passed as an element to image list.
-        // todo bool value or no for cardsUsed full?
-        // todo set CurrentCard = Cards[thisCard] where needed.
-        // todo pass that info anywhere?
+        // todo pass Current Card and/or pickedCard
+        // todo uncomment CurrentPlayerTurn Call method call and MovePlayer method call.
 
         // Current Card field.
-        public int CurrentCard;
+        public string CurrentCard;
 
         // Cards array.
         public string[] Cards = {"Green", "Green", "Green", "Green", "Green", "Green", "Green", "Green", "Double Green",
@@ -33,22 +28,14 @@ namespace Game_CandyLand
             "Blue", "Blue", "Blue", "Blue", "Blue", "Blue", "Blue", "Blue", "Double Blue", "Double Blue",
             "Purple", "Purple", "Purple", "Purple", "Purple", "Purple", "Purple", "Purple", "Double Purple", "Double Purple",
             "Yellow", "Yellow", "Yellow", "Yellow", "Yellow", "Yellow", "Yellow", "Yellow", "Double Yellow", "Double Yellow",
-            "Candy Cane", "Peanut Brittle", "Lolly", "Princess Frostine", "Gumdrop", "Plum"
+            "Candy Cane", "Peanut Brittle", "Lolly", "Princess Frostine", "Gumdrop", "GingerbreadMan"
         };
 
         // Cards used array.
         public string[] CardsUsed = new string[66];
 
-        //
-        //                      
-        //
-        // Do cards and cards used arrays have to be capitalized? do they have to be public?
-        //
-        //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
         // Draw method.
-        public void Draw()
+        public string Draw()
         {
             // Check current player property. -- check player method
             // CurrentPlayerTurn();
@@ -59,9 +46,6 @@ namespace Game_CandyLand
 
             // Declare a variable for the picked card.
             string pickedCard;
-
-            // Create a boolean value to hold true if cardsUsed array is full, and initialize it to true.
-            bool cardsUsedFull = true;
 
             // Declare a variable for the full element counter.
             int counter;
@@ -98,9 +82,11 @@ namespace Game_CandyLand
                 // Add element to CardsUsed array.
                 CardsUsed[thisCard] = pickedCard;
 
-                // Call the MovePlayer method.
-                // MovePlayer(pickedCard, CurrentPlayer.PlayerNumber ); // Need to get player info from player class.
+                // Set CurrentCard equal to pickedCard.
+                CurrentCard = pickedCard;
 
+                // Return pickedCard for draw card method.
+                return pickedCard;
             }
             else
             {
@@ -120,62 +106,12 @@ namespace Game_CandyLand
                 // Add element to CardsUsed array.
                 CardsUsed[thisCard] = pickedCard;
 
-                // Call the MovePlayer method.
-                // MovePlayer(pickedCard); // Need to get player info from player class.
+                // Set CurrentCard equal to pickedCard.
+                CurrentCard = pickedCard;
 
+                // Return pickedCard for draw card method.
+                return pickedCard;
             }
-
-            /*
-            if (fullCounter != counter)
-            {
-                // CardsUsed is not full, bool value is false.
-                cardsUsedFull = false;
-            }
-            else
-            {
-                // CardsUsed is full, bool value is already true.
-            }
-
-            if (!cardsUsedFull)
-            {
-                // Check the CardsUsed array to see if corresponding element is null.
-                while (CardsUsed[thisCard] != null)
-                {
-                    // If not null generate another random number and check again.
-                    thisCard = yourCard.Next(66);
-                }
-
-                // Once null, grab the string value out of Cards array.
-                pickedCard = Cards[thisCard];
-
-                // Add element to CardsUsed array.
-                CardsUsed[thisCard] = pickedCard;
-
-                // Call the MovePlayer method.
-                // MovePlayer(pickedCard); // Need to get player info from player class.
-            }
-            else
-            {
-                // Reset the CardsUsed array to null.
-                for (int index1 = 0; index1 < CardsUsed.Length; index1++)
-                {
-                    CardsUsed[index1] = null;
-                }
-
-                // Draw a card.
-                thisCard = yourCard.Next(66);
-
-                // Grab the string value out of Cards array.
-                pickedCard = Cards[thisCard];
-
-                // Add element to CardsUsed array.
-                CardsUsed[thisCard] = pickedCard;
-
-                // Call the MovePlayer method.
-                // MovePlayer(pickedCard); // Need to get player info from player class.
-            }
-            */
-            MessageBox.Show(thisCard.ToString());
         }
     }
 }

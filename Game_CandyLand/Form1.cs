@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Program.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +33,6 @@ namespace Game_CandyLand
             PlayArea.Width = 1500;
             PlayArea.Height = 985;
             PlayArea.ShowDialog();
-
         }
 
         private void Aboutbutton_Click_1(object sender, EventArgs e)
