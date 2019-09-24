@@ -234,12 +234,12 @@ namespace Game_CandyLand
 
                 nextlocation++;
 
-                if (lblLabel1.Location == new Point(this.playBoard.LocationsX[133], this.playBoard.LocationsY[133]))
+                if (this.lblLabel1.Location == new Point(this.playBoard.LocationsX[133], this.playBoard.LocationsY[133]))
                 {
                     this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[134], this.PlayBoard.LocationsY[134]);
 
                     // Disable draw button.
-                    btnDraw.Enabled = false;
+                    this.btnDraw.Enabled = false;
   
                     // Message box to display winner.
                     MessageBox.Show("Congratulations, Player 1 Wins");             
@@ -254,6 +254,9 @@ namespace Game_CandyLand
         /// <param name="e">EventArgs e.</param>
         private void BtnStart_Click(object sender, EventArgs e)
         {
+            // btnDraw enable
+            this.btnDraw.Enabled = true;
+
             // set up locations for where each color is on the board
             int[] greenLocations = new int[21] { 6, 13, 19, 26, 32, 38, 45, 51, 57, 63, 70, 76, 82, 88, 95, 101, 107, 114, 120, 126, 132 };
             int[] orangeLocations = new int[21] { 5, 12, 18, 25, 31, 37, 44, 50, 56, 62, 68, 75, 81, 87, 94, 100, 107, 113, 119, 125, 131 };

@@ -126,6 +126,7 @@ namespace Game_CandyLand
             // btnDraw
             // 
             this.btnDraw.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDraw.Enabled = false;
             this.btnDraw.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnDraw.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDraw.ForeColor = System.Drawing.Color.HotPink;
