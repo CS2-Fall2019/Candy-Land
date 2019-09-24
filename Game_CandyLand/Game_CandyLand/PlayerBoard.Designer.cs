@@ -37,10 +37,10 @@ namespace Game_CandyLand
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerBoard));
             this.GameBoard_picbox = new System.Windows.Forms.PictureBox();
-            this.Draw_btn = new System.Windows.Forms.Button();
-            this.Start_btn = new System.Windows.Forms.Button();
-            this.outputlog_lbl = new System.Windows.Forms.Label();
-            this.Exit_btn = new System.Windows.Forms.Button();
+            this.btnDraw = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.lblOutputLog = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,59 +64,59 @@ namespace Game_CandyLand
             this.GameBoard_picbox.TabIndex = 0;
             this.GameBoard_picbox.TabStop = false;
             // 
-            // Draw_btn
+            // btnDraw
             // 
-            this.Draw_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Draw_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Draw_btn.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Draw_btn.ForeColor = System.Drawing.Color.HotPink;
-            this.Draw_btn.Location = new System.Drawing.Point(1251, 160);
-            this.Draw_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.Draw_btn.Name = "Draw_btn";
-            this.Draw_btn.Size = new System.Drawing.Size(105, 45);
-            this.Draw_btn.TabIndex = 1;
-            this.Draw_btn.Text = "Draw Card";
-            this.Draw_btn.UseVisualStyleBackColor = false;
-            this.Draw_btn.Click += new System.EventHandler(this.Draw_btn_Click);
+            this.btnDraw.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDraw.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDraw.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDraw.ForeColor = System.Drawing.Color.HotPink;
+            this.btnDraw.Location = new System.Drawing.Point(1251, 160);
+            this.btnDraw.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDraw.Name = "btnDraw";
+            this.btnDraw.Size = new System.Drawing.Size(105, 45);
+            this.btnDraw.TabIndex = 1;
+            this.btnDraw.Text = "Draw Card";
+            this.btnDraw.UseVisualStyleBackColor = false;
+            this.btnDraw.Click += new System.EventHandler(this.BtnDraw_Click);
             // 
-            // Start_btn
+            // btnStart
             // 
-            this.Start_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Start_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Start_btn.Font = new System.Drawing.Font("Showcard Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Start_btn.ForeColor = System.Drawing.Color.HotPink;
-            this.Start_btn.Location = new System.Drawing.Point(1311, 233);
-            this.Start_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.Start_btn.Name = "Start_btn";
-            this.Start_btn.Size = new System.Drawing.Size(67, 31);
-            this.Start_btn.TabIndex = 2;
-            this.Start_btn.Text = "Start";
-            this.Start_btn.UseVisualStyleBackColor = false;
-            this.Start_btn.Click += new System.EventHandler(this.Start_btn_Click);
+            this.btnStart.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnStart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnStart.Font = new System.Drawing.Font("Showcard Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.ForeColor = System.Drawing.Color.HotPink;
+            this.btnStart.Location = new System.Drawing.Point(1311, 233);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(67, 31);
+            this.btnStart.TabIndex = 2;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
-            // outputlog_lbl
+            // lblOutputLog
             // 
-            this.outputlog_lbl.AutoSize = true;
-            this.outputlog_lbl.ForeColor = System.Drawing.Color.LimeGreen;
-            this.outputlog_lbl.Location = new System.Drawing.Point(12, 893);
-            this.outputlog_lbl.Name = "outputlog_lbl";
-            this.outputlog_lbl.Size = new System.Drawing.Size(0, 13);
-            this.outputlog_lbl.TabIndex = 3;
+            this.lblOutputLog.AutoSize = true;
+            this.lblOutputLog.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblOutputLog.Location = new System.Drawing.Point(12, 893);
+            this.lblOutputLog.Name = "lblOutputLog";
+            this.lblOutputLog.Size = new System.Drawing.Size(0, 13);
+            this.lblOutputLog.TabIndex = 3;
             // 
-            // Exit_btn
+            // btnExit
             // 
-            this.Exit_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Exit_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Exit_btn.Font = new System.Drawing.Font("Showcard Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit_btn.ForeColor = System.Drawing.Color.HotPink;
-            this.Exit_btn.Location = new System.Drawing.Point(1223, 233);
-            this.Exit_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.Exit_btn.Name = "Exit_btn";
-            this.Exit_btn.Size = new System.Drawing.Size(67, 31);
-            this.Exit_btn.TabIndex = 4;
-            this.Exit_btn.Text = "Exit";
-            this.Exit_btn.UseVisualStyleBackColor = false;
-            this.Exit_btn.Click += new System.EventHandler(this.Exit_btn_Click);
+            this.btnExit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnExit.Font = new System.Drawing.Font("Showcard Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.HotPink;
+            this.btnExit.Location = new System.Drawing.Point(1223, 233);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(67, 31);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // label1
             // 
@@ -210,10 +210,10 @@ namespace Game_CandyLand
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Exit_btn);
-            this.Controls.Add(this.outputlog_lbl);
-            this.Controls.Add(this.Start_btn);
-            this.Controls.Add(this.Draw_btn);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.lblOutputLog);
+            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.btnDraw);
             this.Controls.Add(this.GameBoard_picbox);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(926, 795);
@@ -232,10 +232,10 @@ namespace Game_CandyLand
         #endregion
 
         private System.Windows.Forms.PictureBox GameBoard_picbox;
-        private System.Windows.Forms.Button Draw_btn;
-        private System.Windows.Forms.Button Start_btn;
-        private System.Windows.Forms.Label outputlog_lbl;
-        private System.Windows.Forms.Button Exit_btn;
+        private System.Windows.Forms.Button btnDraw;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Label lblOutputLog;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

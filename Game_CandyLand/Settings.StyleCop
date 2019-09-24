@@ -1,0 +1,16 @@
+<StyleCopSettings Version="105">
+  <GlobalSettings>
+    <CollectionProperty Name="RecognizedWords">
+      <Value>btn</Value>
+      <Value>candyland</Value>
+      <Value>Gamepiece</Value>
+      <Value>img</Value>
+      <Value>lbl</Value>
+      <Value>outputlog</Value>
+      <Value>pbx</Value>
+      <Value>picbox</Value>
+      <Value>playerboard</Value>
+      <Value>playernumber</Value>
+    </CollectionProperty>
+  </GlobalSettings>
+</StyleCopSettings>

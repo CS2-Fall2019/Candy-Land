@@ -3,36 +3,131 @@
 //     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Game_CandyLand
 {
-    class Board
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    /// <summary>
+    /// Class to represent the board.
+    /// </summary>
+    public class Board
     {
-        // Number of Players field.
-        public int NumberOfPlayers = 1; //Change number for final version
+        /// <summary>
+        /// Number of Players field.
+        /// </summary>
+        private int numberOfPlayers; // Change number for final version
 
-        // Round number.
-        public int Round;
+        /// <summary>
+        /// Round Number field.
+        /// </summary>
+        private int round;
 
-        // Current Players.
-        public int CurrentPlayer;
+        /// <summary>
+        /// Current Player field.
+        /// </summary>
+        private int currentPlayer;
 
-        // The player in first place.
-        public int Leader;
+        /// <summary>
+        /// The Player in first place field.
+        /// </summary>
+        private int leader;
 
-        // The number of locations (squares) on the board.
-        public int[] Locations = new int[135];
-        public  int[] LocationsX = new int[135];
-        public int[] LocationsY = new int[135];
-        public string[] LocationsColor = new string[135];
+        /// <summary>
+        /// locations array.
+        /// </summary>
+        private int[] locations = new int[135];
 
-        // Method to move the Player on the board
+        /// <summary>
+        /// Array to hold X coordinates on board.
+        /// </summary>
+        private int[] locationsX = new int[135];
 
+        /// <summary>
+        /// Array to hold Y coordinates on board.
+        /// </summary>
+        private int[] locationsY = new int[135];
+
+        /// <summary>
+        /// Array to hold what color is at what location
+        /// </summary>
+        private string[] locationsColor = new string[135];
+
+        /// <summary>
+        /// Gets or sets Number of Players field.
+        /// </summary>
+        public int NumberOfPlayers
+        {
+            get { return this.numberOfPlayers; }
+            set { this.numberOfPlayers = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets Number field.
+        /// </summary>
+        public int Round
+        {
+            get { return this.round; }
+            set { this.round = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets Player field.
+        /// </summary>
+        public int CurrentPlayer
+        {
+            get { return this.currentPlayer; }
+            set { this.currentPlayer = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets leader field.
+        /// </summary>
+        public int Leader
+        {
+            get { return this.leader; }
+            set { this.leader = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets Number of Players field.
+        /// </summary>
+        public int[] Locations
+        {
+            get { return this.locations; }
+            set { this.locations = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets locationsX.
+        /// </summary>
+        public int[] LocationsX
+        {
+            get { return this.locationsX; }
+            set { this.locationsX = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets locationsY.
+        /// </summary>
+        public int[] LocationsY
+        {
+            get { return this.locationsY; }
+            set { this.locationsY = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets locationsColor.
+        /// </summary>
+        public string[] LocationsColor
+        {
+            get { return this.locationsColor; }
+            set { this.locationsColor = value; }
+        }
 
         // Lose a Turn - will look something like this. so no one is stuck infinitely we only change stuck to true if its false. it should remove after one turn
         /*
@@ -71,10 +166,12 @@ namespace Game_CandyLand
         }
         */
 
+        /*
+        /// <summary>
+        /// Method to check which players turn it is. 
+        /// </summary>
         public void CurrentPlayerTurn()
-        {
-
-
-        }
+        {}
+        */
     }
 }

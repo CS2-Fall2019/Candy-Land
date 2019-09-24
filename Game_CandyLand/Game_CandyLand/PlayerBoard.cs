@@ -21,7 +21,7 @@ namespace Game_CandyLand
         public PlayerBoard()
         {
             InitializeComponent();
-            outputlog_lbl.Text = "Singleplayer...";
+            lblOutputLog.Text = "Singleplayer...";
 
         }
 
@@ -31,7 +31,7 @@ namespace Game_CandyLand
        
 
 
-        private void Start_btn_Click(object sender, EventArgs e)
+        private void BtnStart_Click(object sender, EventArgs e)
         {
 
             //set up locations for where each color is on the board
@@ -511,20 +511,20 @@ namespace Game_CandyLand
             PlayBoard.LocationsColor[102] = "Princess Frostine";
             PlayBoard.LocationsColor[133] = "Red";
             PlayBoard.LocationsColor[134] = "Finish";
-            
+
             //testing the movement on some random locations
-            outputlog_lbl.Text = "Arrays initialized...";
+            lblOutputLog.Text = "Arrays initialized...";
             label3.Location = new Point(62,713);
             label4.Location = new Point(147,801);
             label2.Location = new Point(PlayBoard.LocationsX[106], PlayBoard.LocationsY[106]);
             MessageBox.Show(PlayBoard.LocationsColor[105] + PlayBoard.LocationsColor[106] + PlayBoard.LocationsColor[107]); //debugging
             label1.Location = new Point(PlayBoard.LocationsX[1],PlayBoard.LocationsY[1]);
-            outputlog_lbl.Text = "Players moved...";
+            lblOutputLog.Text = "Players moved...";
 
         }
 
         //close and exit the game
-        private void Exit_btn_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             DialogResult Closeform = MessageBox.Show("Are you sure you want to exit? All progress will be lost.","Exit CandyLand?", MessageBoxButtons.YesNo);
             if (Closeform == DialogResult.Yes)
@@ -534,11 +534,11 @@ namespace Game_CandyLand
             }
         }
 
-        private void Draw_btn_Click(object sender, EventArgs e)
+        private void BtnDraw_Click(object sender, EventArgs e)
         {
             string currentCard = CardDeck.Draw();
             MovePlayer(currentCard);
-            outputlog_lbl.Text = currentCard;
+            lblOutputLog.Text = currentCard;
 
             
             // Display Card in picture box from corresponding element of image list.

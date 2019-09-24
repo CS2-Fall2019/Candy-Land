@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Program.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+// <copyright file="PlayerBoard.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
 //     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -16,634 +16,73 @@ namespace Game_CandyLand
     using System.Threading.Tasks;
     using System.Windows.Forms;
 
+    /// <summary>
+    /// Class for the PlayerBoard form.
+    /// </summary>
     public partial class PlayerBoard : Form
     {
+        /// <summary>
+        /// Create a playerboard. 
+        /// </summary> 
+        private Deck cardDeck = new Deck();
+
+        /// <summary>
+        /// Create a deck.
+        /// </summary> 
+        private Board playBoard = new Board();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlayerBoard"/> class.
+        /// </summary>
         public PlayerBoard()
         {
-            InitializeComponent();
-            outputlog_lbl.Text = "Singleplayer...";
-
+            this.InitializeComponent();
+            this.lblOutputLog.Text = "Singleplayer...";
         }
 
-        //create the deck and initialize it 
-        Deck CardDeck = new Deck();
-        Board PlayBoard = new Board();
-       
-
-
-        private void Start_btn_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Gets or sets cardDeck field. 
+        /// </summary> 
+        public Deck CardDeck
         {
-
-            //set up locations for where each color is on the board
-            int[] GreenLocations = new int[21] {6,13,19,26,32,38,45,51,57,63,70,76,82,88,95,101,107,114,120,126,132};
-            int[] OrangeLocations = new int[21] {5,12,18,25,31,37,44,50,56,62,68,75,81,87,94,100,107,113,119,125,131};
-            int[] BlueLocations = new int[21] {4,11,17,24,30,36,43,49,55,61,67,74,80,86,93,99,106,112,118,124,130};
-            int[] YellowLocations = new int[21] {3,10,16,23,29,35,41,48,54,60,66,73,79,85,91,98,105,111,117,123,129};
-            int[] PurpleLocations = new int[21] {2,8,15,22,28,34,40,47,53,59,65,72,78,84,90,97,104,110,116,122,128};
-            int[] RedLocations = new int[22] {1,7,14,21,27,33,39,46,52,58,64,71,77,83,89,96,103,109,115,121,127,133};
-            int[] SpecialLocations = new int[6] {9,20,42,69,92,102};
-
-
-            //create the board and initialize it
-            PlayBoard.Round = 1;
-            PlayBoard.Leader = 1;
-            PlayBoard.CurrentPlayer = 1;
-            PlayBoard.NumberOfPlayers = 1;
-
-            //set up 134 board locations in the locations array
-            for (int i = 0; i < PlayBoard.Locations.Length; i++)
-            {
-                PlayBoard.Locations[i] = i;
-            }
-
-            //set up the x and y locations for each location by adding it to the correct array LONG
-            //Any way to improve below code?
-            PlayBoard.LocationsX[0] = 0;
-            PlayBoard.LocationsY[0] = 0;
-
-            PlayBoard.LocationsX[1] = 211;
-            PlayBoard.LocationsY[1] = 814;
-
-            PlayBoard.LocationsX[2] = 262;
-            PlayBoard.LocationsY[2] = 816;
-
-            PlayBoard.LocationsX[3] = 297;
-            PlayBoard.LocationsY[3] = 801;
-
-            PlayBoard.LocationsX[4] = 321;
-            PlayBoard.LocationsY[4] = 770;
-
-            PlayBoard.LocationsX[5] = 340;
-            PlayBoard.LocationsY[5] = 733;
-
-            PlayBoard.LocationsX[6] = 372;
-            PlayBoard.LocationsY[6] = 702;
-
-            PlayBoard.LocationsX[7] = 416;
-            PlayBoard.LocationsY[7] = 686;
-
-            PlayBoard.LocationsX[8] = 459;
-            PlayBoard.LocationsY[8] = 684;
-
-            PlayBoard.LocationsX[9] = 509; // Gingerbread Man
-            PlayBoard.LocationsY[9] = 689;
-
-            PlayBoard.LocationsX[10] = 549;
-            PlayBoard.LocationsY[10] = 704;
-
-            PlayBoard.LocationsX[11] = 585;
-            PlayBoard.LocationsY[11] = 733;
-
-            PlayBoard.LocationsX[12] = 613;
-            PlayBoard.LocationsY[12] = 767;
-
-            PlayBoard.LocationsX[13] = 647;
-            PlayBoard.LocationsY[13] = 792;
-
-            PlayBoard.LocationsX[14] = 685;
-            PlayBoard.LocationsY[14] = 820;
-
-            PlayBoard.LocationsX[15] = 729;
-            PlayBoard.LocationsY[15] = 830;
-
-            PlayBoard.LocationsX[16] = 772;
-            PlayBoard.LocationsY[16] = 835;
-
-            PlayBoard.LocationsX[17] = 817;
-            PlayBoard.LocationsY[17] = 834;
-
-            PlayBoard.LocationsX[18] = 864;
-            PlayBoard.LocationsY[18] = 830;
-
-            PlayBoard.LocationsX[19] = 901;
-            PlayBoard.LocationsY[19] = 811;
-
-            PlayBoard.LocationsX[20] = 916;
-            PlayBoard.LocationsY[20] = 767;
-
-            PlayBoard.LocationsX[21] = 893;
-            PlayBoard.LocationsY[21] = 732;
-
-            PlayBoard.LocationsX[22] = 853;
-            PlayBoard.LocationsY[22] = 713;
-
-            PlayBoard.LocationsX[23] = 806;
-            PlayBoard.LocationsY[23] = 713;
-
-            PlayBoard.LocationsX[24] = 761;
-            PlayBoard.LocationsY[24] = 713;
-
-            PlayBoard.LocationsX[25] = 714;
-            PlayBoard.LocationsY[25] = 713;
-
-            PlayBoard.LocationsX[26] = 668;
-            PlayBoard.LocationsY[26] = 713;
-
-            PlayBoard.LocationsX[27] = 628;
-            PlayBoard.LocationsY[27] = 694;
-
-            PlayBoard.LocationsX[28] = 599;
-            PlayBoard.LocationsY[28] = 659;
-
-            PlayBoard.LocationsX[29] = 594;
-            PlayBoard.LocationsY[29] = 613;
-
-            PlayBoard.LocationsX[30] = 626;
-            PlayBoard.LocationsY[30] = 584;
-
-            PlayBoard.LocationsX[31] = 673;
-            PlayBoard.LocationsY[31] = 582;
-
-            PlayBoard.LocationsX[32] = 717;
-            PlayBoard.LocationsY[32] = 596;
-
-            PlayBoard.LocationsX[33] = 759;
-            PlayBoard.LocationsY[33] = 622;
-
-            PlayBoard.LocationsX[34] = 800;
-            PlayBoard.LocationsY[34] = 643;
-
-            PlayBoard.LocationsX[35] = 840;
-            PlayBoard.LocationsY[35] = 658;
-
-            PlayBoard.LocationsX[36] = 883;
-            PlayBoard.LocationsY[36] = 670;
-
-            PlayBoard.LocationsX[37] = 930;
-            PlayBoard.LocationsY[37] = 668;
-
-            PlayBoard.LocationsX[38] = 969;
-            PlayBoard.LocationsY[38] = 646;
-
-            PlayBoard.LocationsX[39] = 992;
-            PlayBoard.LocationsY[39] = 611;
-
-            PlayBoard.LocationsX[40] = 995;
-            PlayBoard.LocationsY[40] = 564;
-
-            PlayBoard.LocationsX[41] = 979;
-            PlayBoard.LocationsY[41] = 524;
-
-            PlayBoard.LocationsX[42] = 941;
-            PlayBoard.LocationsY[42] = 499;// SPECIAL 
-
-            PlayBoard.LocationsX[43] = 891;
-            PlayBoard.LocationsY[43] = 503;
-
-            PlayBoard.LocationsX[44] = 850;
-            PlayBoard.LocationsY[44] = 516;
-
-            PlayBoard.LocationsX[45] = 806;
-            PlayBoard.LocationsY[45] = 532;//RECIEVES FROM 35
-
-            PlayBoard.LocationsX[46] = 760;
-            PlayBoard.LocationsY[46] = 527;//STUCK
-
-            PlayBoard.LocationsX[47] = 718;
-            PlayBoard.LocationsY[47] = 508;
-
-            PlayBoard.LocationsX[48] = 681;
-            PlayBoard.LocationsY[48] = 484;
-
-            PlayBoard.LocationsX[49] = 640;
-            PlayBoard.LocationsY[49] = 457;
-
-            PlayBoard.LocationsX[50] = 598;
-            PlayBoard.LocationsY[50] = 442;
-
-            PlayBoard.LocationsX[51] = 552;
-            PlayBoard.LocationsY[51] = 435;
-
-            PlayBoard.LocationsX[52] = 504;
-            PlayBoard.LocationsY[52] = 441;
-
-            PlayBoard.LocationsX[53] = 462;
-            PlayBoard.LocationsY[53] = 456;
-
-            PlayBoard.LocationsX[54] = 422;
-            PlayBoard.LocationsY[54] = 481;
-
-            PlayBoard.LocationsX[55] = 392;
-            PlayBoard.LocationsY[55] = 514;
-
-            PlayBoard.LocationsX[56] = 362;
-            PlayBoard.LocationsY[56] = 550;
-
-            PlayBoard.LocationsX[57] = 335;
-            PlayBoard.LocationsY[57] = 587;
-
-            PlayBoard.LocationsX[58] = 305;
-            PlayBoard.LocationsY[58] = 617;
-
-            PlayBoard.LocationsX[59] = 268;
-            PlayBoard.LocationsY[59] = 642;//RECIEVE FROM 5
-
-            PlayBoard.LocationsX[60] = 228;
-            PlayBoard.LocationsY[60] = 653;
-
-            PlayBoard.LocationsX[61] = 186;
-            PlayBoard.LocationsY[61] = 656;
-
-            PlayBoard.LocationsX[62] = 142;
-            PlayBoard.LocationsY[62] = 648;
-
-            PlayBoard.LocationsX[63] = 102;
-            PlayBoard.LocationsY[63] = 636;
-
-            PlayBoard.LocationsX[64] = 67;
-            PlayBoard.LocationsY[64] = 609;
-
-            PlayBoard.LocationsX[65] = 51;
-            PlayBoard.LocationsY[65] = 569;
-
-            PlayBoard.LocationsX[66] = 44;
-            PlayBoard.LocationsY[66] = 522;
-
-            PlayBoard.LocationsX[67] = 69;
-            PlayBoard.LocationsY[67] = 488;
-
-            PlayBoard.LocationsX[68] = 109;
-            PlayBoard.LocationsY[68] = 473;
-
-            PlayBoard.LocationsX[69] = 152; // Peanut Brittle
-            PlayBoard.LocationsY[69] = 476;
-
-            PlayBoard.LocationsX[70] = 192;
-            PlayBoard.LocationsY[70] = 489;
-
-            PlayBoard.LocationsX[71] = 235;
-            PlayBoard.LocationsY[71] = 504;
-
-            PlayBoard.LocationsX[72] = 281;
-            PlayBoard.LocationsY[72] = 508;
-
-            PlayBoard.LocationsX[73] = 319;
-            PlayBoard.LocationsY[73] = 494;
-
-            PlayBoard.LocationsX[74] = 326;
-            PlayBoard.LocationsY[74] = 449;
-
-            PlayBoard.LocationsX[75] = 297;
-            PlayBoard.LocationsY[75] = 413;
-
-            PlayBoard.LocationsX[76] = 258;
-            PlayBoard.LocationsY[76] = 392;
-
-            PlayBoard.LocationsX[77] = 225;
-            PlayBoard.LocationsY[77] = 361;
-
-            PlayBoard.LocationsX[78] = 230;
-            PlayBoard.LocationsY[78] = 311;
-
-            PlayBoard.LocationsX[79] = 262;
-            PlayBoard.LocationsY[79] = 283;
-
-            PlayBoard.LocationsX[80] = 308;
-            PlayBoard.LocationsY[80] = 270;
-
-            PlayBoard.LocationsX[81] = 352;
-            PlayBoard.LocationsY[81] = 273;
-
-            PlayBoard.LocationsX[82] = 394;
-            PlayBoard.LocationsY[82] = 281;
-
-            PlayBoard.LocationsX[83] = 438;
-            PlayBoard.LocationsY[83] = 302;
-
-            PlayBoard.LocationsX[84] = 479;
-            PlayBoard.LocationsY[84] = 324;
-
-            PlayBoard.LocationsX[85] = 521;
-            PlayBoard.LocationsY[85] = 347;
-
-            PlayBoard.LocationsX[86] = 561;
-            PlayBoard.LocationsY[86] = 370;//STUCK #2
-
-            PlayBoard.LocationsX[87] = 605;
-            PlayBoard.LocationsY[87] = 386;
-
-            PlayBoard.LocationsX[88] = 649;
-            PlayBoard.LocationsY[88] = 400;
-
-            PlayBoard.LocationsX[89] = 695;
-            PlayBoard.LocationsY[89] = 411;
-
-            PlayBoard.LocationsX[90] = 741;
-            PlayBoard.LocationsY[90] = 417;
-
-            PlayBoard.LocationsX[91] = 788;
-            PlayBoard.LocationsY[91] = 425;
-
-            PlayBoard.LocationsX[92] = 835;
-            PlayBoard.LocationsY[92] = 426;//SPECIAL Lolly Pop
-
-            PlayBoard.LocationsX[93] = 882;
-            PlayBoard.LocationsY[93] = 426;
-
-            PlayBoard.LocationsX[94] = 926;
-            PlayBoard.LocationsY[94] = 413;
-
-            PlayBoard.LocationsX[95] = 968;
-            PlayBoard.LocationsY[95] = 397;
-
-            PlayBoard.LocationsX[96] = 996;
-            PlayBoard.LocationsY[96] = 363;
-
-            PlayBoard.LocationsX[97] = 1005;
-            PlayBoard.LocationsY[97] = 316;
-
-            PlayBoard.LocationsX[98] = 992;
-            PlayBoard.LocationsY[98] = 273;
-
-            PlayBoard.LocationsX[99] = 956;
-            PlayBoard.LocationsY[99] = 247;
-
-            PlayBoard.LocationsX[100] = 919;
-            PlayBoard.LocationsY[100] = 221;
-
-            PlayBoard.LocationsX[101] = 903;
-            PlayBoard.LocationsY[101] = 177;
-
-            PlayBoard.LocationsX[102] = 882;
-            PlayBoard.LocationsY[102] = 137;//SPECIAL ice cream
-
-            PlayBoard.LocationsX[103] = 841;
-            PlayBoard.LocationsY[103] = 117;
-
-            PlayBoard.LocationsX[104] = 794;
-            PlayBoard.LocationsY[104] = 131;
-
-            PlayBoard.LocationsX[105] = 763;
-            PlayBoard.LocationsY[105] = 163;
-
-            PlayBoard.LocationsX[106] = 743;
-            PlayBoard.LocationsY[106] = 208;
-
-            PlayBoard.LocationsX[107] = 722;
-            PlayBoard.LocationsY[107] = 248;
-
-            PlayBoard.LocationsX[108] = 695;
-            PlayBoard.LocationsY[108] = 285;
-
-            PlayBoard.LocationsX[109] = 657;
-            PlayBoard.LocationsY[109] = 312;
-
-            PlayBoard.LocationsX[110] = 609;
-            PlayBoard.LocationsY[110] = 318;
-
-            PlayBoard.LocationsX[111] = 565;
-            PlayBoard.LocationsY[111] = 302;
-
-            PlayBoard.LocationsX[112] = 526;
-            PlayBoard.LocationsY[112] = 282;
-
-            PlayBoard.LocationsX[113] = 486;
-            PlayBoard.LocationsY[113] = 255;
-
-            PlayBoard.LocationsX[114] = 448;
-            PlayBoard.LocationsY[114] = 230;
-
-            PlayBoard.LocationsX[115] = 404;
-            PlayBoard.LocationsY[115] = 216;
-
-            PlayBoard.LocationsX[116] = 357;
-            PlayBoard.LocationsY[116] = 209;
-
-            PlayBoard.LocationsX[117] = 312;
-            PlayBoard.LocationsY[117] = 213;
-
-            PlayBoard.LocationsX[118] = 267;
-            PlayBoard.LocationsY[118] = 221;
-
-            PlayBoard.LocationsX[119] = 223;// 
-            PlayBoard.LocationsY[119] = 225;// Stuck
-
-            PlayBoard.LocationsX[120] = 179;
-            PlayBoard.LocationsY[120] = 225;
-
-            PlayBoard.LocationsX[121] = 138;
-            PlayBoard.LocationsY[121] = 218;
-
-            PlayBoard.LocationsX[122] = 102;
-            PlayBoard.LocationsY[122] = 198;
-
-            PlayBoard.LocationsX[123] = 81;
-            PlayBoard.LocationsY[123] = 164;
-
-            PlayBoard.LocationsX[124] = 77;
-            PlayBoard.LocationsY[124] = 114;
-
-            PlayBoard.LocationsX[125] = 90;
-            PlayBoard.LocationsY[125] = 72;
-
-            PlayBoard.LocationsX[126] = 125;
-            PlayBoard.LocationsY[126] = 44;
-
-            PlayBoard.LocationsX[127] = 167;
-            PlayBoard.LocationsY[127] = 25;
-
-            PlayBoard.LocationsX[128] = 211;
-            PlayBoard.LocationsY[128] = 24;
-
-            PlayBoard.LocationsX[129] = 253;
-            PlayBoard.LocationsY[129] = 33;
-
-            PlayBoard.LocationsX[130] = 291;
-            PlayBoard.LocationsY[130] = 56;
-
-            PlayBoard.LocationsX[131] = 327;
-            PlayBoard.LocationsY[131] = 82;
-
-            PlayBoard.LocationsX[132] = 363;
-            PlayBoard.LocationsY[132] = 109;
-
-            PlayBoard.LocationsX[133] = 403;
-            PlayBoard.LocationsY[133] = 127;
-
-            PlayBoard.LocationsX[134] = 448;
-            PlayBoard.LocationsY[134] = 147;
-            // End of plotting out points in array
-
-
-            //fill the locationcolor array with the correct color
-            // this will make location[1] = locationcolor[1]. EX) Location[1] = LocationColor[1], where LocationColor[1] = "Red"
-            int colorcounter = 0;
-            int j = 1;
-            while (colorcounter <= 20)
-            {
-                while(j <= 133)
-                {
-                    if (RedLocations[colorcounter] == j)
-                    {
-                        PlayBoard.LocationsColor[j] = "Red";
-                    }
-                    else if (PurpleLocations[colorcounter] == j)
-                    {
-                        PlayBoard.LocationsColor[j] = "Purple";
-                    }
-                    else if (YellowLocations[colorcounter] == j)
-                    {
-                        PlayBoard.LocationsColor[j] = "Yellow";
-                    }
-                    else if (BlueLocations[colorcounter] == j)
-                    {
-                        PlayBoard.LocationsColor[j] = "Blue";
-                    }
-                    else if (OrangeLocations[colorcounter] == j)
-                    {
-                        PlayBoard.LocationsColor[j] = "Orange";
-                    }
-                    else if (GreenLocations[colorcounter] == j)
-                    {
-                        PlayBoard.LocationsColor[j] = "Green";
-                    }
-                    j++;
-                }
-                j = 0;
-                colorcounter++;
-            }
-            //add the special locations to the array
-            PlayBoard.LocationsColor[9] = "GingerbreadMan";
-            PlayBoard.LocationsColor[20] = "Candy Cane";
-            PlayBoard.LocationsColor[42] = "Gumdrop";
-            PlayBoard.LocationsColor[69] = "Peanut Brittle";
-            PlayBoard.LocationsColor[92] = "Lolly";
-            PlayBoard.LocationsColor[102] = "Princess Frostine";
-            PlayBoard.LocationsColor[133] = "Red";
-            PlayBoard.LocationsColor[134] = "Finish";
-            
-            //testing the movement on some random locations
-            outputlog_lbl.Text = "Arrays initialized...";
-            label3.Location = new Point(62,713);
-            label4.Location = new Point(147,801);
-            label2.Location = new Point(PlayBoard.LocationsX[106], PlayBoard.LocationsY[106]);
-            MessageBox.Show(PlayBoard.LocationsColor[105] + PlayBoard.LocationsColor[106] + PlayBoard.LocationsColor[107]); //debugging
-            label1.Location = new Point(PlayBoard.LocationsX[1],PlayBoard.LocationsY[1]);
-            outputlog_lbl.Text = "Players moved...";
-
+            get { return this.cardDeck; }
+            set { this.cardDeck = value; }
         }
 
-        //close and exit the game
-        private void Exit_btn_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Gets or sets playBoard.
+        /// </summary> 
+        public Board PlayBoard
         {
-            DialogResult Closeform = MessageBox.Show("Are you sure you want to exit? All progress will be lost.","Exit CandyLand?", MessageBoxButtons.YesNo);
-            if (Closeform == DialogResult.Yes)
-            {
-                this.Close();
-                Application.Exit();
-            }
+            get { return this.playBoard; }
+            set { this.playBoard = value; }
         }
 
-        private void Draw_btn_Click(object sender, EventArgs e)
-        {
-            string currentCard = CardDeck.Draw();
-            MovePlayer(currentCard);
-            outputlog_lbl.Text = currentCard;
-
-            
-            // Display Card in picture box from corresponding element of image list.
-            if (CardDeck.CurrentCard == "Green")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[0];
-            }
-            else if (CardDeck.CurrentCard == "Double Green")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[1];
-            }
-            else if (CardDeck.CurrentCard == "Red")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[2];
-            }
-            else if (CardDeck.CurrentCard == "Double Red")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[3];
-            }
-            else if (CardDeck.CurrentCard == "Orange")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[4];
-            }
-            else if (CardDeck.CurrentCard == "Double Orange")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[5];
-            }
-            else if (CardDeck.CurrentCard == "Blue")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[6];
-            }
-            else if (CardDeck.CurrentCard == "Double Blue")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[7];
-            }
-            else if (CardDeck.CurrentCard == "Purple")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[8];
-            }
-            else if (CardDeck.CurrentCard == "Double Purple")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[9];
-            }
-            else if (CardDeck.CurrentCard == "Yellow")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[10];
-            }
-            else if (CardDeck.CurrentCard == "Double Yellow")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[11];
-            }
-            else if (CardDeck.CurrentCard == "Candy Cane")
-            {
-                label1.Location = new Point(PlayBoard.LocationsX[20], PlayBoard.LocationsY[20]);
-                pbxCardDisplay.Image = imgListCards.Images[12];
-            }
-            else if (CardDeck.CurrentCard == "Peanut Brittle")
-            {
-                label1.Location = new Point(PlayBoard.LocationsX[69], PlayBoard.LocationsY[69]);
-                pbxCardDisplay.Image = imgListCards.Images[13];
-            }
-            else if (CardDeck.CurrentCard == "Lolly")
-            {
-                label1.Location = new Point(PlayBoard.LocationsX[92], PlayBoard.LocationsY[92]);
-                pbxCardDisplay.Image = imgListCards.Images[14];
-            }
-            else if (CardDeck.CurrentCard == "Princess Frostine")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[15];
-                label1.Location = new Point(PlayBoard.LocationsX[102], PlayBoard.LocationsY[102]);
-            }
-            else if (CardDeck.CurrentCard == "Gumdrop")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[16];
-                label1.Location = new Point(PlayBoard.LocationsX[42], PlayBoard.LocationsY[42]);
-            }
-            else if (CardDeck.CurrentCard == "GingerbreadMan")
-            {
-                pbxCardDisplay.Image = imgListCards.Images[17];
-                label1.Location = new Point(PlayBoard.LocationsX[9], PlayBoard.LocationsY[9]);
-            }
-        }
-
-        int currentlocation = 0;
+        /// <summary>
+        /// Method to move players and get there current location.
+        /// </summary>
+        /// <param name="card">The card being passed to the MovePlayer method.</param>
         public void MovePlayer(string card)
         {
-            //get players current location
+            // get players current location
             int i = 1;
             while (i < 135)
             {
-                if (label1.Location == new Point(PlayBoard.LocationsX[i], PlayBoard.LocationsY[i]))
+                if (this.label1.Location == new Point(this.PlayBoard.LocationsX[i], this.PlayBoard.LocationsY[i]))
                 {
-                    currentlocation = i;
+                    this.currentlocation = i;
                     break;
                 }
+
                 i++;
             }
-            
-            int nextlocation = currentlocation + 1;
+
+            int nextlocation = this.currentlocation + 1;
             while (nextlocation < 135)
             {
-
-                if (PlayBoard.LocationsColor[nextlocation] == card)
+                if (this.PlayBoard.LocationsColor[nextlocation] == card)
                 {
-                    label1.Location = new Point(PlayBoard.LocationsX[nextlocation], PlayBoard.LocationsY[nextlocation]);
+                    this.label1.Location = new Point(this.PlayBoard.LocationsX[nextlocation], this.PlayBoard.LocationsY[nextlocation]);
                     break;
                 }
                 else if (card == "Double Green")
@@ -651,20 +90,22 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
-                        if (PlayBoard.LocationsColor[firstlocation] == "Green")
+                        if (this.PlayBoard.LocationsColor[firstlocation] == "Green")
                         {
-                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            this.label1.Location = new Point(this.PlayBoard.LocationsX[firstlocation], this.PlayBoard.LocationsY[firstlocation]);
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
-                                if (PlayBoard.LocationsColor[doublelocation] == "Green")
+                                if (this.PlayBoard.LocationsColor[doublelocation] == "Green")
                                 {
-                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    this.label1.Location = new Point(this.PlayBoard.LocationsX[doublelocation], this.PlayBoard.LocationsY[doublelocation]);
                                     return;
                                 }
+
                                 doublelocation++;
-                           }
+                            }
                         }
+
                         firstlocation++;
                     }
                 }
@@ -673,20 +114,22 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
-                        if (PlayBoard.LocationsColor[firstlocation] == "Yellow")
+                        if (this.PlayBoard.LocationsColor[firstlocation] == "Yellow")
                         {
-                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            this.label1.Location = new Point(this.PlayBoard.LocationsX[firstlocation], this.PlayBoard.LocationsY[firstlocation]);
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
-                                if (PlayBoard.LocationsColor[doublelocation] == "Yellow")
+                                if (this.PlayBoard.LocationsColor[doublelocation] == "Yellow")
                                 {
-                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    this.label1.Location = new Point(this.PlayBoard.LocationsX[doublelocation], this.PlayBoard.LocationsY[doublelocation]);
                                     return;
                                 }
+
                                 doublelocation++;
                             }
                         }
+
                         firstlocation++;
                     }
                 }
@@ -695,20 +138,22 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
-                        if (PlayBoard.LocationsColor[firstlocation] == "Red")
+                        if (this.PlayBoard.LocationsColor[firstlocation] == "Red")
                         {
-                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            this.label1.Location = new Point(this.PlayBoard.LocationsX[firstlocation], this.PlayBoard.LocationsY[firstlocation]);
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
-                                if (PlayBoard.LocationsColor[doublelocation] == "Red")
+                                if (this.PlayBoard.LocationsColor[doublelocation] == "Red")
                                 {
-                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    this.label1.Location = new Point(this.PlayBoard.LocationsX[doublelocation], this.PlayBoard.LocationsY[doublelocation]);
                                     return;
                                 }
+
                                 doublelocation++;
                             }
                         }
+
                         firstlocation++;
                     }
                 }
@@ -717,20 +162,22 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
-                        if (PlayBoard.LocationsColor[firstlocation] == "Purple")
+                        if (this.PlayBoard.LocationsColor[firstlocation] == "Purple")
                         {
-                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            this.label1.Location = new Point(this.PlayBoard.LocationsX[firstlocation], this.PlayBoard.LocationsY[firstlocation]);
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
-                                if (PlayBoard.LocationsColor[doublelocation] == "Purple")
+                                if (this.PlayBoard.LocationsColor[doublelocation] == "Purple")
                                 {
-                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    this.label1.Location = new Point(this.PlayBoard.LocationsX[doublelocation], this.PlayBoard.LocationsY[doublelocation]);
                                     return;
                                 }
+
                                 doublelocation++;
                             }
                         }
+
                         firstlocation++;
                     }
                 }
@@ -739,20 +186,22 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
-                        if (PlayBoard.LocationsColor[firstlocation] == "Blue")
+                        if (this.PlayBoard.LocationsColor[firstlocation] == "Blue")
                         {
-                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            this.label1.Location = new Point(this.PlayBoard.LocationsX[firstlocation], this.PlayBoard.LocationsY[firstlocation]);
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
-                                if (PlayBoard.LocationsColor[doublelocation] == "Blue")
+                                if (this.PlayBoard.LocationsColor[doublelocation] == "Blue")
                                 {
-                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    this.label1.Location = new Point(this.PlayBoard.LocationsX[doublelocation], this.PlayBoard.LocationsY[doublelocation]);
                                     return;
                                 }
+
                                 doublelocation++;
                             }
                         }
+
                         firstlocation++;
                     }
                 }
@@ -761,30 +210,645 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
-                        if (PlayBoard.LocationsColor[firstlocation] == "Orange")
+                        if (this.PlayBoard.LocationsColor[firstlocation] == "Orange")
                         {
-                            label1.Location = new Point(PlayBoard.LocationsX[firstlocation], PlayBoard.LocationsY[firstlocation]);
+                            this.label1.Location = new Point(this.PlayBoard.LocationsX[firstlocation], this.PlayBoard.LocationsY[firstlocation]);
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
-                                if (PlayBoard.LocationsColor[doublelocation] == "Orange")
+                                if (this.PlayBoard.LocationsColor[doublelocation] == "Orange")
                                 {
-                                    label1.Location = new Point(PlayBoard.LocationsX[doublelocation], PlayBoard.LocationsY[doublelocation]);
+                                    this.label1.Location = new Point(this.PlayBoard.LocationsX[doublelocation], this.PlayBoard.LocationsY[doublelocation]);
                                     return;
                                 }
+
                                 doublelocation++;
                             }
                         }
+
                         firstlocation++;
                     }
                 }
+
                 nextlocation++;
             }
         }
 
+        /// <summary>
+        /// Method to start the game
+        /// </summary>
+        /// <param name="sender">The sender object.</param>
+        /// <param name="e">EventArgs e.</param>
+        private void BtnStart_Click(object sender, EventArgs e)
+        {
+            // set up locations for where each color is on the board
+            int[] greenLocations = new int[21] { 6, 13, 19, 26, 32, 38, 45, 51, 57, 63, 70, 76, 82, 88, 95, 101, 107, 114, 120, 126, 132 };
+            int[] orangeLocations = new int[21] { 5, 12, 18, 25, 31, 37, 44, 50, 56, 62, 68, 75, 81, 87, 94, 100, 107, 113, 119, 125, 131 };
+            int[] blueLocations = new int[21] { 4, 11, 17, 24, 30, 36, 43, 49, 55, 61, 67, 74, 80, 86, 93, 99, 106, 112, 118, 124, 130 };
+            int[] yellowLocations = new int[21] { 3, 10, 16, 23, 29, 35, 41, 48, 54, 60, 66, 73, 79, 85, 91, 98, 105, 111, 117, 123, 129 };
+            int[] purpleLocations = new int[21] { 2, 8, 15, 22, 28, 34, 40, 47, 53, 59, 65, 72, 78, 84, 90, 97, 104, 110, 116, 122, 128 };
+            int[] redLocations = new int[22] { 1, 7, 14, 21, 27, 33, 39, 46, 52, 58, 64, 71, 77, 83, 89, 96, 103, 109, 115, 121, 127, 133 };
+            int[] specialLocations = new int[6] { 9, 20, 42, 69, 92, 102 };
+
+            // create the board and initialize it
+            this.PlayBoard.Round = 1;
+            this.PlayBoard.Leader = 1;
+            this.PlayBoard.CurrentPlayer = 1;
+            this.PlayBoard.NumberOfPlayers = 1;
+
+            // set up 134 board locations in the locations array
+            for (int i = 0; i < this.PlayBoard.Locations.Length; i++)
+            {
+                this.PlayBoard.Locations[i] = i;
+            }
+
+            // set up the x and y locations for each location by adding it to the correct array LONG
+            // Any way to improve below code?
+            this.PlayBoard.LocationsX[0] = 0;
+            this.PlayBoard.LocationsY[0] = 0;
+
+            this.PlayBoard.LocationsX[1] = 211;
+            this.PlayBoard.LocationsY[1] = 814;
+
+            this.PlayBoard.LocationsX[2] = 262;
+            this.PlayBoard.LocationsY[2] = 816;
+
+            this.PlayBoard.LocationsX[3] = 297;
+            this.PlayBoard.LocationsY[3] = 801;
+
+            this.PlayBoard.LocationsX[4] = 321;
+            this.PlayBoard.LocationsY[4] = 770;
+
+            this.PlayBoard.LocationsX[5] = 340;
+            this.PlayBoard.LocationsY[5] = 733;
+
+            this.PlayBoard.LocationsX[6] = 372;
+            this.PlayBoard.LocationsY[6] = 702;
+
+            this.PlayBoard.LocationsX[7] = 416;
+            this.PlayBoard.LocationsY[7] = 686;
+
+            this.PlayBoard.LocationsX[8] = 459;
+            this.PlayBoard.LocationsY[8] = 684;
+
+            this.PlayBoard.LocationsX[9] = 509; // Gingerbread Man
+            this.PlayBoard.LocationsY[9] = 689;
+
+            this.PlayBoard.LocationsX[10] = 549;
+            this.PlayBoard.LocationsY[10] = 704;
+
+            this.PlayBoard.LocationsX[11] = 585;
+            this.PlayBoard.LocationsY[11] = 733;
+
+            this.PlayBoard.LocationsX[12] = 613;
+            this.PlayBoard.LocationsY[12] = 767;
+
+            this.PlayBoard.LocationsX[13] = 647;
+            this.PlayBoard.LocationsY[13] = 792;
+
+            this.PlayBoard.LocationsX[14] = 685;
+            this.PlayBoard.LocationsY[14] = 820;
+
+            this.PlayBoard.LocationsX[15] = 729;
+            this.PlayBoard.LocationsY[15] = 830;
+
+            this.PlayBoard.LocationsX[16] = 772;
+            this.PlayBoard.LocationsY[16] = 835;
+
+            this.PlayBoard.LocationsX[17] = 817;
+            this.PlayBoard.LocationsY[17] = 834;
+
+            this.PlayBoard.LocationsX[18] = 864;
+            this.PlayBoard.LocationsY[18] = 830;
+
+            this.PlayBoard.LocationsX[19] = 901;
+            this.PlayBoard.LocationsY[19] = 811;
+
+            this.PlayBoard.LocationsX[20] = 916;
+            this.PlayBoard.LocationsY[20] = 767;
+
+            this.PlayBoard.LocationsX[21] = 893;
+            this.PlayBoard.LocationsY[21] = 732;
+
+            this.PlayBoard.LocationsX[22] = 853;
+            this.PlayBoard.LocationsY[22] = 713;
+
+            this.PlayBoard.LocationsX[23] = 806;
+            this.PlayBoard.LocationsY[23] = 713;
+
+            this.PlayBoard.LocationsX[24] = 761;
+            this.PlayBoard.LocationsY[24] = 713;
+
+            this.PlayBoard.LocationsX[25] = 714;
+            this.PlayBoard.LocationsY[25] = 713;
+
+            this.PlayBoard.LocationsX[26] = 668;
+            this.PlayBoard.LocationsY[26] = 713;
+
+            this.PlayBoard.LocationsX[27] = 628;
+            this.PlayBoard.LocationsY[27] = 694;
+
+            this.PlayBoard.LocationsX[28] = 599;
+            this.PlayBoard.LocationsY[28] = 659;
+
+            this.PlayBoard.LocationsX[29] = 594;
+            this.PlayBoard.LocationsY[29] = 613;
+
+            this.PlayBoard.LocationsX[30] = 626;
+            this.PlayBoard.LocationsY[30] = 584;
+
+            this.PlayBoard.LocationsX[31] = 673;
+            this.PlayBoard.LocationsY[31] = 582;
+
+            this.PlayBoard.LocationsX[32] = 717;
+            this.PlayBoard.LocationsY[32] = 596;
+
+            this.PlayBoard.LocationsX[33] = 759;
+            this.PlayBoard.LocationsY[33] = 622;
+
+            this.PlayBoard.LocationsX[34] = 800;
+            this.PlayBoard.LocationsY[34] = 643;
+
+            this.PlayBoard.LocationsX[35] = 840;
+            this.PlayBoard.LocationsY[35] = 658;
+
+            this.PlayBoard.LocationsX[36] = 883;
+            this.PlayBoard.LocationsY[36] = 670;
+
+            this.PlayBoard.LocationsX[37] = 930;
+            this.PlayBoard.LocationsY[37] = 668;
+
+            this.PlayBoard.LocationsX[38] = 969;
+            this.PlayBoard.LocationsY[38] = 646;
+
+            this.PlayBoard.LocationsX[39] = 992;
+            this.PlayBoard.LocationsY[39] = 611;
+
+            this.PlayBoard.LocationsX[40] = 995;
+            this.PlayBoard.LocationsY[40] = 564;
+
+            this.PlayBoard.LocationsX[41] = 979;
+            this.PlayBoard.LocationsY[41] = 524;
+
+            this.PlayBoard.LocationsX[42] = 941;
+            this.PlayBoard.LocationsY[42] = 499; // SPECIAL 
+
+            this.PlayBoard.LocationsX[43] = 891;
+            this.PlayBoard.LocationsY[43] = 503;
+
+            this.PlayBoard.LocationsX[44] = 850;
+            this.PlayBoard.LocationsY[44] = 516;
+
+            this.PlayBoard.LocationsX[45] = 806;
+            this.PlayBoard.LocationsY[45] = 532; // RECIEVES FROM 35
+
+            this.PlayBoard.LocationsX[46] = 760;
+            this.PlayBoard.LocationsY[46] = 527; // STUCK
+
+            this.PlayBoard.LocationsX[47] = 718;
+            this.PlayBoard.LocationsY[47] = 508;
+
+            this.PlayBoard.LocationsX[48] = 681;
+            this.PlayBoard.LocationsY[48] = 484;
+
+            this.PlayBoard.LocationsX[49] = 640;
+            this.PlayBoard.LocationsY[49] = 457;
+
+            this.PlayBoard.LocationsX[50] = 598;
+            this.PlayBoard.LocationsY[50] = 442;
+
+            this.PlayBoard.LocationsX[51] = 552;
+            this.PlayBoard.LocationsY[51] = 435;
+
+            this.PlayBoard.LocationsX[52] = 504;
+            this.PlayBoard.LocationsY[52] = 441;
+
+            this.PlayBoard.LocationsX[53] = 462;
+            this.PlayBoard.LocationsY[53] = 456;
+
+            this.PlayBoard.LocationsX[54] = 422;
+            this.PlayBoard.LocationsY[54] = 481;
+
+            this.PlayBoard.LocationsX[55] = 392;
+            this.PlayBoard.LocationsY[55] = 514;
+
+            this.PlayBoard.LocationsX[56] = 362;
+            this.PlayBoard.LocationsY[56] = 550;
+
+            this.PlayBoard.LocationsX[57] = 335;
+            this.PlayBoard.LocationsY[57] = 587;
+
+            this.PlayBoard.LocationsX[58] = 305;
+            this.PlayBoard.LocationsY[58] = 617;
+
+            this.PlayBoard.LocationsX[59] = 268;
+            this.PlayBoard.LocationsY[59] = 642; // RECIEVE FROM 5
+
+            this.PlayBoard.LocationsX[60] = 228;
+            this.PlayBoard.LocationsY[60] = 653;
+
+            this.PlayBoard.LocationsX[61] = 186;
+            this.PlayBoard.LocationsY[61] = 656;
+
+            this.PlayBoard.LocationsX[62] = 142;
+            this.PlayBoard.LocationsY[62] = 648;
+
+            this.PlayBoard.LocationsX[63] = 102;
+            this.PlayBoard.LocationsY[63] = 636;
+
+            this.PlayBoard.LocationsX[64] = 67;
+            this.PlayBoard.LocationsY[64] = 609;
+
+            this.PlayBoard.LocationsX[65] = 51;
+            this.PlayBoard.LocationsY[65] = 569;
+
+            this.PlayBoard.LocationsX[66] = 44;
+            this.PlayBoard.LocationsY[66] = 522;
+
+            this.PlayBoard.LocationsX[67] = 69;
+            this.PlayBoard.LocationsY[67] = 488;
+
+            this.PlayBoard.LocationsX[68] = 109;
+            this.PlayBoard.LocationsY[68] = 473;
+
+            this.PlayBoard.LocationsX[69] = 152; // Peanut Brittle
+            this.PlayBoard.LocationsY[69] = 476;
+
+            this.PlayBoard.LocationsX[70] = 192;
+            this.PlayBoard.LocationsY[70] = 489;
+
+            this.PlayBoard.LocationsX[71] = 235;
+            this.PlayBoard.LocationsY[71] = 504;
+
+            this.PlayBoard.LocationsX[72] = 281;
+            this.PlayBoard.LocationsY[72] = 508;
+
+            this.PlayBoard.LocationsX[73] = 319;
+            this.PlayBoard.LocationsY[73] = 494;
+
+            this.PlayBoard.LocationsX[74] = 326;
+            this.PlayBoard.LocationsY[74] = 449;
+
+            this.PlayBoard.LocationsX[75] = 297;
+            this.PlayBoard.LocationsY[75] = 413;
+
+            this.PlayBoard.LocationsX[76] = 258;
+            this.PlayBoard.LocationsY[76] = 392;
+
+            this.PlayBoard.LocationsX[77] = 225;
+            this.PlayBoard.LocationsY[77] = 361;
+
+            this.PlayBoard.LocationsX[78] = 230;
+            this.PlayBoard.LocationsY[78] = 311;
+
+            this.PlayBoard.LocationsX[79] = 262;
+            this.PlayBoard.LocationsY[79] = 283;
+
+            this.PlayBoard.LocationsX[80] = 308;
+            this.PlayBoard.LocationsY[80] = 270;
+
+            this.PlayBoard.LocationsX[81] = 352;
+            this.PlayBoard.LocationsY[81] = 273;
+
+            this.PlayBoard.LocationsX[82] = 394;
+            this.PlayBoard.LocationsY[82] = 281;
+
+            this.PlayBoard.LocationsX[83] = 438;
+            this.PlayBoard.LocationsY[83] = 302;
+
+            this.PlayBoard.LocationsX[84] = 479;
+            this.PlayBoard.LocationsY[84] = 324;
+
+            this.PlayBoard.LocationsX[85] = 521;
+            this.PlayBoard.LocationsY[85] = 347;
+
+            this.PlayBoard.LocationsX[86] = 561;
+            this.PlayBoard.LocationsY[86] = 370; // STUCK #2
+
+            this.PlayBoard.LocationsX[87] = 605;
+            this.PlayBoard.LocationsY[87] = 386;
+
+            this.PlayBoard.LocationsX[88] = 649;
+            this.PlayBoard.LocationsY[88] = 400;
+
+            this.PlayBoard.LocationsX[89] = 695;
+            this.PlayBoard.LocationsY[89] = 411;
+
+            this.PlayBoard.LocationsX[90] = 741;
+            this.PlayBoard.LocationsY[90] = 417;
+
+            this.PlayBoard.LocationsX[91] = 788;
+            this.PlayBoard.LocationsY[91] = 425;
+
+            this.PlayBoard.LocationsX[92] = 835;
+            this.PlayBoard.LocationsY[92] = 426; // SPECIAL Lolly Pop
+
+            this.PlayBoard.LocationsX[93] = 882;
+            this.PlayBoard.LocationsY[93] = 426;
+
+            this.PlayBoard.LocationsX[94] = 926;
+            this.PlayBoard.LocationsY[94] = 413;
+
+            this.PlayBoard.LocationsX[95] = 968;
+            this.PlayBoard.LocationsY[95] = 397;
+
+            this.PlayBoard.LocationsX[96] = 996;
+            this.PlayBoard.LocationsY[96] = 363;
+
+            this.PlayBoard.LocationsX[97] = 1005;
+            this.PlayBoard.LocationsY[97] = 316;
+
+            this.PlayBoard.LocationsX[98] = 992;
+            this.PlayBoard.LocationsY[98] = 273;
+
+            this.PlayBoard.LocationsX[99] = 956;
+            this.PlayBoard.LocationsY[99] = 247;
+
+            this.PlayBoard.LocationsX[100] = 919;
+            this.PlayBoard.LocationsY[100] = 221;
+
+            this.PlayBoard.LocationsX[101] = 903;
+            this.PlayBoard.LocationsY[101] = 177;
+
+            this.PlayBoard.LocationsX[102] = 882;
+            this.PlayBoard.LocationsY[102] = 137; // SPECIAL ice cream
+
+            this.PlayBoard.LocationsX[103] = 841;
+            this.PlayBoard.LocationsY[103] = 117;
+
+            this.PlayBoard.LocationsX[104] = 794;
+            this.PlayBoard.LocationsY[104] = 131;
+
+            this.PlayBoard.LocationsX[105] = 763;
+            this.PlayBoard.LocationsY[105] = 163;
+
+            this.PlayBoard.LocationsX[106] = 743;
+            this.PlayBoard.LocationsY[106] = 208;
+
+            this.PlayBoard.LocationsX[107] = 722;
+            this.PlayBoard.LocationsY[107] = 248;
+
+            this.PlayBoard.LocationsX[108] = 695;
+            this.PlayBoard.LocationsY[108] = 285;
+
+            this.PlayBoard.LocationsX[109] = 657;
+            this.PlayBoard.LocationsY[109] = 312;
+
+            this.PlayBoard.LocationsX[110] = 609;
+            this.PlayBoard.LocationsY[110] = 318;
+
+            this.PlayBoard.LocationsX[111] = 565;
+            this.PlayBoard.LocationsY[111] = 302;
+
+            this.PlayBoard.LocationsX[112] = 526;
+            this.PlayBoard.LocationsY[112] = 282;
+
+            this.PlayBoard.LocationsX[113] = 486;
+            this.PlayBoard.LocationsY[113] = 255;
+
+            this.PlayBoard.LocationsX[114] = 448;
+            this.PlayBoard.LocationsY[114] = 230;
+
+            this.PlayBoard.LocationsX[115] = 404;
+            this.PlayBoard.LocationsY[115] = 216;
+
+            this.PlayBoard.LocationsX[116] = 357;
+            this.PlayBoard.LocationsY[116] = 209;
+
+            this.PlayBoard.LocationsX[117] = 312;
+            this.PlayBoard.LocationsY[117] = 213;
+
+            this.PlayBoard.LocationsX[118] = 267;
+            this.PlayBoard.LocationsY[118] = 221;
+
+            this.PlayBoard.LocationsX[119] = 223; // ???
+            this.PlayBoard.LocationsY[119] = 225; // Stuck
+
+            this.PlayBoard.LocationsX[120] = 179;
+            this.PlayBoard.LocationsY[120] = 225;
+
+            this.PlayBoard.LocationsX[121] = 138;
+            this.PlayBoard.LocationsY[121] = 218;
+
+            this.PlayBoard.LocationsX[122] = 102;
+            this.PlayBoard.LocationsY[122] = 198;
+
+            this.PlayBoard.LocationsX[123] = 81;
+            this.PlayBoard.LocationsY[123] = 164;
+
+            this.PlayBoard.LocationsX[124] = 77;
+            this.PlayBoard.LocationsY[124] = 114;
+
+            this.PlayBoard.LocationsX[125] = 90;
+            this.PlayBoard.LocationsY[125] = 72;
+
+            this.PlayBoard.LocationsX[126] = 125;
+            this.PlayBoard.LocationsY[126] = 44;
+
+            this.PlayBoard.LocationsX[127] = 167;
+            this.PlayBoard.LocationsY[127] = 25;
+
+            this.PlayBoard.LocationsX[128] = 211;
+            this.PlayBoard.LocationsY[128] = 24;
+
+            this.PlayBoard.LocationsX[129] = 253;
+            this.PlayBoard.LocationsY[129] = 33;
+
+            this.PlayBoard.LocationsX[130] = 291;
+            this.PlayBoard.LocationsY[130] = 56;
+
+            this.PlayBoard.LocationsX[131] = 327;
+            this.PlayBoard.LocationsY[131] = 82;
+
+            this.PlayBoard.LocationsX[132] = 363;
+            this.PlayBoard.LocationsY[132] = 109;
+
+            this.PlayBoard.LocationsX[133] = 403;
+            this.PlayBoard.LocationsY[133] = 127;
+
+            this.PlayBoard.LocationsX[134] = 448;
+            this.PlayBoard.LocationsY[134] = 147;
+
+            // End of plotting out points in array
+
+            /* fill the locationcolor array with the correct color
+            this will make location[1] = locationcolor[1]. EX) Location[1] = LocationColor[1], where LocationColor[1] = "Red" */
+            int colorcounter = 0;
+            int j = 1;
+            while (colorcounter <= 20)
+            {
+                while (j <= 133)
+                {
+                    if (redLocations[colorcounter] == j)
+                    {
+                        this.PlayBoard.LocationsColor[j] = "Red";
+                    }
+                    else if (purpleLocations[colorcounter] == j)
+                    {
+                        this.PlayBoard.LocationsColor[j] = "Purple";
+                    }
+                    else if (yellowLocations[colorcounter] == j)
+                    {
+                        this.PlayBoard.LocationsColor[j] = "Yellow";
+                    }
+                    else if (blueLocations[colorcounter] == j)
+                    {
+                        this.PlayBoard.LocationsColor[j] = "Blue";
+                    }
+                    else if (orangeLocations[colorcounter] == j)
+                    {
+                        this.PlayBoard.LocationsColor[j] = "Orange";
+                    }
+                    else if (greenLocations[colorcounter] == j)
+                    {
+                        this.PlayBoard.LocationsColor[j] = "Green";
+                    }
+
+                    j++;
+                }
+
+                j = 0;
+                colorcounter++;
+            }
+
+            // add the special locations to the array
+            this.PlayBoard.LocationsColor[9] = "GingerbreadMan";
+            this.PlayBoard.LocationsColor[20] = "Candy Cane";
+            this.PlayBoard.LocationsColor[42] = "Gumdrop";
+            this.PlayBoard.LocationsColor[69] = "Peanut Brittle";
+            this.PlayBoard.LocationsColor[92] = "Lolly";
+            this.PlayBoard.LocationsColor[102] = "Princess Frostine";
+            this.PlayBoard.LocationsColor[133] = "Red";
+            this.PlayBoard.LocationsColor[134] = "Finish";
+
+            // testing the movement on some random locations
+            this.lblOutputLog.Text = "Arrays initialized...";
+            this.label3.Location = new Point(62, 713);
+            this.label4.Location = new Point(147, 801);
+            this.label2.Location = new Point(this.PlayBoard.LocationsX[106], this.PlayBoard.LocationsY[106]);
+            this.label1.Location = new Point(this.PlayBoard.LocationsX[1], this.PlayBoard.LocationsY[1]);
+            this.lblOutputLog.Text = "Players moved...";
+        }
+
+        /// <summary>
+        /// Method to start the game
+        /// </summary>
+        /// <param name="sender">The sender object.</param>
+        /// <param name="e">EventArgs e.</param>
+        private void BtnDraw_Click(object sender, EventArgs e)
+        {
+            string currentCard = this.CardDeck.Draw();
+            this.MovePlayer(currentCard);
+            this.lblOutputLog.Text = currentCard;
+
+            // Display Card in picture box from corresponding element of image list.
+            if (this.CardDeck.CurrentCard == "Green")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[0];
+            }
+            else if (this.CardDeck.CurrentCard == "Double Green")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[1];
+            }
+            else if (this.CardDeck.CurrentCard == "Red")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[2];
+            }
+            else if (this.CardDeck.CurrentCard == "Double Red")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[3];
+            }
+            else if (this.CardDeck.CurrentCard == "Orange")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[4];
+            }
+            else if (this.CardDeck.CurrentCard == "Double Orange")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[5];
+            }
+            else if (this.CardDeck.CurrentCard == "Blue")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[6];
+            }
+            else if (this.CardDeck.CurrentCard == "Double Blue")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[7];
+            }
+            else if (this.CardDeck.CurrentCard == "Purple")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[8];
+            }
+            else if (this.CardDeck.CurrentCard == "Double Purple")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[9];
+            }
+            else if (this.CardDeck.CurrentCard == "Yellow")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[10];
+            }
+            else if (this.CardDeck.CurrentCard == "Double Yellow")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[11];
+            }
+            else if (this.CardDeck.CurrentCard == "Candy Cane")
+            {
+                this.label1.Location = new Point(this.PlayBoard.LocationsX[20], this.PlayBoard.LocationsY[20]);
+                this.pbxCardDisplay.Image = this.imgListCards.Images[12];
+            }
+            else if (this.CardDeck.CurrentCard == "Peanut Brittle")
+            {
+                this.label1.Location = new Point(this.PlayBoard.LocationsX[69], this.PlayBoard.LocationsY[69]);
+                this.pbxCardDisplay.Image = this.imgListCards.Images[13];
+            }
+            else if (this.CardDeck.CurrentCard == "Lolly")
+            {
+                this.label1.Location = new Point(this.PlayBoard.LocationsX[92], this.PlayBoard.LocationsY[92]);
+                this.pbxCardDisplay.Image = this.imgListCards.Images[14];
+            }
+            else if (this.CardDeck.CurrentCard == "Princess Frostine")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[15];
+                this.label1.Location = new Point(this.PlayBoard.LocationsX[102], this.PlayBoard.LocationsY[102]);
+            }
+            else if (this.CardDeck.CurrentCard == "Gumdrop")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[16];
+                this.label1.Location = new Point(this.PlayBoard.LocationsX[42], this.PlayBoard.LocationsY[42]);
+            }
+            else if (this.CardDeck.CurrentCard == "GingerbreadMan")
+            {
+                this.pbxCardDisplay.Image = this.imgListCards.Images[17];
+                this.label1.Location = new Point(this.PlayBoard.LocationsX[9], this.PlayBoard.LocationsY[9]);
+            }
+        }
+
+        /// <summary>
+        /// current location to 0.
+        /// </summary>
+        int currentlocation = 0;
+
+        /// <summary>
+        /// Method for while the board is loading.
+        /// </summary>
+        /// <param name="sender">The sender object.</param>
+        /// <param name="e">EventArgs e.</param>
         private void PlayerBoard_Load(object sender, EventArgs e)
         {
+        }
 
+        /// <summary>
+        /// Method to close and exit
+        /// </summary>
+        /// <param name="sender">The sender object.</param>
+        /// <param name="e">EventArgs e.</param>
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult closeform = MessageBox.Show("Are you sure you want to exit? All progress will be lost.", "Exit CandyLand?", MessageBoxButtons.YesNo);
+            if (closeform == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Exit();
+            }
         }
     }
 }
