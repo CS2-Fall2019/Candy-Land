@@ -12,13 +12,16 @@ namespace Game_CandyLand
     using System.Threading.Tasks;
     using System.Windows.Forms;
 
-    static class Program
+    /// <summary>
+    /// Class for Program.
+    /// </summary>
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
