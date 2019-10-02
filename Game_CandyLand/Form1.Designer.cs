@@ -1,6 +1,15 @@
-﻿namespace Game_CandyLand
+﻿//-----------------------------------------------------------------------
+// <copyright file="Form1.Designer.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
+//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+namespace Game_CandyLand
 {
-    partial class CandyLandGame
+    /// <summary>
+    /// The CandyLandGame class (designer).
+    /// </summary>
+    public partial class CandyLandGame
     {
         /// <summary>
         /// Required designer variable.
@@ -8,15 +17,26 @@
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
+        /// Single Player button.
+        /// </summary>
+        private System.Windows.Forms.Button btnSinglePlayer;
+
+        /// <summary>
+        /// About button.
+        /// </summary>
+        private System.Windows.Forms.Button btnAbout;
+
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (this.components != null))
             {
-                components.Dispose();
+                this.components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -29,51 +49,64 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CandyLandGame));
-            this.SinglePlayerbutton = new System.Windows.Forms.Button();
-            this.Aboutbutton = new System.Windows.Forms.Button();
+            this.btnSinglePlayer = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
+            this.btnMultiplayer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // SinglePlayerbutton
+            // btnSinglePlayer
             // 
-            this.SinglePlayerbutton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.SinglePlayerbutton.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.SinglePlayerbutton.FlatAppearance.BorderSize = 0;
-            this.SinglePlayerbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.SinglePlayerbutton.ForeColor = System.Drawing.Color.Black;
-            this.SinglePlayerbutton.Location = new System.Drawing.Point(130, 81);
-            this.SinglePlayerbutton.Margin = new System.Windows.Forms.Padding(2);
-            this.SinglePlayerbutton.Name = "SinglePlayerbutton";
-            this.SinglePlayerbutton.Size = new System.Drawing.Size(103, 42);
-            this.SinglePlayerbutton.TabIndex = 0;
-            this.SinglePlayerbutton.Text = "Single Player";
-            this.SinglePlayerbutton.UseVisualStyleBackColor = false;
-            this.SinglePlayerbutton.Click += new System.EventHandler(this.SinglePlayerbutton_Click);
+            this.btnSinglePlayer.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSinglePlayer.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSinglePlayer.FlatAppearance.BorderSize = 0;
+            this.btnSinglePlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSinglePlayer.ForeColor = System.Drawing.Color.Black;
+            this.btnSinglePlayer.Location = new System.Drawing.Point(347, 193);
+            this.btnSinglePlayer.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSinglePlayer.Name = "btnSinglePlayer";
+            this.btnSinglePlayer.Size = new System.Drawing.Size(275, 100);
+            this.btnSinglePlayer.TabIndex = 0;
+            this.btnSinglePlayer.Text = "Single Player";
+            this.btnSinglePlayer.UseVisualStyleBackColor = false;
+            this.btnSinglePlayer.Click += new System.EventHandler(this.BtnSinglePlayer_Click);
             // 
-            // Aboutbutton
+            // btnAbout
             // 
-            this.Aboutbutton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Aboutbutton.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Aboutbutton.FlatAppearance.BorderSize = 0;
-            this.Aboutbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Aboutbutton.ForeColor = System.Drawing.Color.Black;
-            this.Aboutbutton.Location = new System.Drawing.Point(130, 145);
-            this.Aboutbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Aboutbutton.Name = "Aboutbutton";
-            this.Aboutbutton.Size = new System.Drawing.Size(103, 42);
-            this.Aboutbutton.TabIndex = 1;
-            this.Aboutbutton.Text = "About";
-            this.Aboutbutton.UseVisualStyleBackColor = false;
-            this.Aboutbutton.Click += new System.EventHandler(this.Aboutbutton_Click_1);
+            this.btnAbout.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAbout.FlatAppearance.BorderSize = 0;
+            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAbout.ForeColor = System.Drawing.Color.Black;
+            this.btnAbout.Location = new System.Drawing.Point(347, 542);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(275, 100);
+            this.btnAbout.TabIndex = 1;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = false;
+            this.btnAbout.Click += new System.EventHandler(this.BtnAbout_Click);
+            // 
+            // btnMultiplayer
+            // 
+            this.btnMultiplayer.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnMultiplayer.Location = new System.Drawing.Point(347, 360);
+            this.btnMultiplayer.Name = "btnMultiplayer";
+            this.btnMultiplayer.Size = new System.Drawing.Size(275, 86);
+            this.btnMultiplayer.TabIndex = 2;
+            this.btnMultiplayer.Text = "Multiplayer";
+            this.btnMultiplayer.UseVisualStyleBackColor = false;
+            this.btnMultiplayer.Click += new System.EventHandler(this.btnMultiplayer_Click);
             // 
             // CandyLandGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(377, 283);
-            this.Controls.Add(this.Aboutbutton);
-            this.Controls.Add(this.SinglePlayerbutton);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.ClientSize = new System.Drawing.Size(1005, 675);
+            this.Controls.Add(this.btnMultiplayer);
+            this.Controls.Add(this.btnAbout);
+            this.Controls.Add(this.btnSinglePlayer);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "CandyLandGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CandyLand";
@@ -83,8 +116,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button SinglePlayerbutton;
-        private System.Windows.Forms.Button Aboutbutton;
+        private System.Windows.Forms.Button btnMultiplayer;
     }
 }
-
