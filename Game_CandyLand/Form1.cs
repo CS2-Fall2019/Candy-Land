@@ -58,5 +58,20 @@ namespace Game_CandyLand
         {
             MessageBox.Show("Developers: Brandon, Ian, James, Mike" + "\n" + "Version: 1.000 " + "\n" + "Date: September 2019", "Game Information");
         }
+
+        private void btnMultiplayer_Click(object sender, EventArgs e)
+        {
+            // Close this form
+            this.Hide();
+
+            // Set up the new form which will be the play area for the game
+            PlayerBoard playArea = new PlayerBoard()
+            {
+                Width = 1500,
+                Height = 985
+            };
+
+            playArea.ShowDialog();
+        }
     }
 }
