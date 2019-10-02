@@ -84,29 +84,46 @@ namespace Game_CandyLand
 
                 i++;
             }
-
+            // Move player ahead if the player is on the Gumdrop pass bridge start square
+            if (lblLabel1.Location == new Point(this.playBoard.LocationsX[5], this.playBoard.LocationsY[5]))
+            {
+                // Rainbow Bridge beggins on location 5 and ends on location 59
+                pbxGameBoard.Refresh();
+                this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[59] - 5, this.PlayBoard.LocationsY[59] - 10);
+                pbxGameBoard.Refresh();
+                currentlocation = 59;
+            }
+            else if (lblLabel1.Location == new Point(835,648))
+            {
+                // Gumdrop bridge beggins on location 35 and ends on location 45
+                pbxGameBoard.Refresh();
+                this.lblLabel1.Location = new Point(this.playBoard.LocationsX[45] - 5, this.playBoard.LocationsY[45] - 10);
+                pbxGameBoard.Refresh();
+                currentlocation = 45;
+            }
             int nextlocation = currentlocation + 1;
             while (nextlocation < 135)
             {
+                pbxGameBoard.Refresh();
                 if (this.PlayBoard.LocationsColor[nextlocation] == card)
                 {
-                    //this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextlocation], this.PlayBoard.LocationsY[nextlocation]);
-
                     //TESTING ANIMATION
                     int nextSpace = currentlocation + 1;
                     while ((nextSpace - 1) != nextlocation)
                     {
-                        //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                        pbxGameBoard.Refresh();
                         if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                         {
                             this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
                         }
-                        System.Threading.Thread.Sleep(500);
+                        pbxGameBoard.Refresh();
+                        //sleep for less time will make the movement faster(10-100ish), more time will make the movement slower(100+)
+                        System.Threading.Thread.Sleep(50);
                         pbxGameBoard.Refresh();
                         nextSpace++;
                     }
 
-
+                    pbxGameBoard.Refresh();
                     //END TESTING
                     break;
                 }
@@ -115,6 +132,7 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
+                        pbxGameBoard.Refresh();
                         if (this.PlayBoard.LocationsColor[firstlocation] == "Green")
                         {
                             //double animation testing
@@ -122,11 +140,15 @@ namespace Game_CandyLand
                             while ((nextSpace - 1) != firstlocation)
                             {
                                 //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                pbxGameBoard.Refresh();
                                 if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                 {
+                                    pbxGameBoard.Refresh();
                                     this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                    pbxGameBoard.Refresh();
                                 }
-                                System.Threading.Thread.Sleep(500);
+                                pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                 pbxGameBoard.Refresh();
                                 nextSpace++;
                             }
@@ -135,6 +157,7 @@ namespace Game_CandyLand
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
+                                pbxGameBoard.Refresh();
                                 if (this.PlayBoard.LocationsColor[doublelocation] == "Green")
                                 {
                                     //double animation testing 2
@@ -142,11 +165,15 @@ namespace Game_CandyLand
                                     while ((nextSpace - 1) != doublelocation)
                                     {
                                         //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                        pbxGameBoard.Refresh();
                                         if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                         {
+                                            pbxGameBoard.Refresh();
                                             this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                            pbxGameBoard.Refresh();
                                         }
-                                        System.Threading.Thread.Sleep(500);
+                                        pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                         pbxGameBoard.Refresh();
                                         nextSpace++;
                                     }
@@ -167,6 +194,7 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
+                        pbxGameBoard.Refresh();
                         if (this.PlayBoard.LocationsColor[firstlocation] == "Yellow")
                         {
                             //double animation testing
@@ -174,11 +202,15 @@ namespace Game_CandyLand
                             while ((nextSpace - 1) != firstlocation)
                             {
                                 //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                pbxGameBoard.Refresh();
                                 if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                 {
+                                    pbxGameBoard.Refresh();
                                     this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                    pbxGameBoard.Refresh();
                                 }
-                                System.Threading.Thread.Sleep(500);
+                                pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                 pbxGameBoard.Refresh();
                                 nextSpace++;
                             }
@@ -187,6 +219,7 @@ namespace Game_CandyLand
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
+                                pbxGameBoard.Refresh();
                                 if (this.PlayBoard.LocationsColor[doublelocation] == "Yellow")
                                 {
                                     //double animation testing 2
@@ -194,11 +227,15 @@ namespace Game_CandyLand
                                     while ((nextSpace - 1) != doublelocation)
                                     {
                                         //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                        pbxGameBoard.Refresh();
                                         if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                         {
+                                            pbxGameBoard.Refresh();
                                             this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                            pbxGameBoard.Refresh();
                                         }
-                                        System.Threading.Thread.Sleep(500);
+                                        pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                         pbxGameBoard.Refresh();
                                         nextSpace++;
                                     }
@@ -219,6 +256,7 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
+                        pbxGameBoard.Refresh();
                         if (this.PlayBoard.LocationsColor[firstlocation] == "Red")
                         {
                             //double animation testing
@@ -226,11 +264,15 @@ namespace Game_CandyLand
                             while ((nextSpace - 1) != firstlocation)
                             {
                                 //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                pbxGameBoard.Refresh();
                                 if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                 {
+                                    pbxGameBoard.Refresh();
                                     this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                    pbxGameBoard.Refresh();
                                 }
-                                System.Threading.Thread.Sleep(500);
+                                pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                 pbxGameBoard.Refresh();
                                 nextSpace++;
                             }
@@ -239,6 +281,7 @@ namespace Game_CandyLand
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
+                                pbxGameBoard.Refresh();
                                 if (this.PlayBoard.LocationsColor[doublelocation] == "Red")
                                 {
                                     //double animation testing 2
@@ -246,11 +289,15 @@ namespace Game_CandyLand
                                     while ((nextSpace - 1) != doublelocation)
                                     {
                                         //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                        pbxGameBoard.Refresh();
                                         if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                         {
+                                            pbxGameBoard.Refresh();
                                             this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                            pbxGameBoard.Refresh();
                                         }
-                                        System.Threading.Thread.Sleep(500);
+                                        pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                         pbxGameBoard.Refresh();
                                         nextSpace++;
                                     }
@@ -260,9 +307,10 @@ namespace Game_CandyLand
                                 }
 
                                 doublelocation++;
+                                pbxGameBoard.Refresh();
                             }
                         }
-
+                        pbxGameBoard.Refresh();
                         firstlocation++;
                     }
                 }
@@ -271,6 +319,7 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
+                        pbxGameBoard.Refresh();
                         if (this.PlayBoard.LocationsColor[firstlocation] == "Purple")
                         {
                             //double animation testing
@@ -278,11 +327,15 @@ namespace Game_CandyLand
                             while ((nextSpace - 1) != firstlocation)
                             {
                                 //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                pbxGameBoard.Refresh();
                                 if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                 {
+                                    pbxGameBoard.Refresh();
                                     this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                    pbxGameBoard.Refresh();
                                 }
-                                System.Threading.Thread.Sleep(500);
+                                pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                 pbxGameBoard.Refresh();
                                 nextSpace++;
                             }
@@ -291,6 +344,7 @@ namespace Game_CandyLand
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
+                                pbxGameBoard.Refresh();
                                 if (this.PlayBoard.LocationsColor[doublelocation] == "Purple")
                                 {
                                     //double animation testing 2
@@ -298,11 +352,15 @@ namespace Game_CandyLand
                                     while ((nextSpace - 1) != doublelocation)
                                     {
                                         //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                        pbxGameBoard.Refresh();
                                         if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                         {
+                                            pbxGameBoard.Refresh();
                                             this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                            pbxGameBoard.Refresh();
                                         }
-                                        System.Threading.Thread.Sleep(500);
+                                        pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                         pbxGameBoard.Refresh();
                                         nextSpace++;
                                     }
@@ -315,6 +373,7 @@ namespace Game_CandyLand
                             }
                         }
 
+                        pbxGameBoard.Refresh();
                         firstlocation++;
                     }
                 }
@@ -323,6 +382,7 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
+                        pbxGameBoard.Refresh();
                         if (this.PlayBoard.LocationsColor[firstlocation] == "Blue")
                         {
                             //double animation testing
@@ -330,11 +390,15 @@ namespace Game_CandyLand
                             while ((nextSpace - 1) != firstlocation)
                             {
                                 //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                pbxGameBoard.Refresh();
                                 if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                 {
+                                    pbxGameBoard.Refresh();
                                     this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                    pbxGameBoard.Refresh();
                                 }
-                                System.Threading.Thread.Sleep(500);
+                                pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                 pbxGameBoard.Refresh();
                                 nextSpace++;
                             }
@@ -343,6 +407,7 @@ namespace Game_CandyLand
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
+                                pbxGameBoard.Refresh();
                                 if (this.PlayBoard.LocationsColor[doublelocation] == "Blue")
                                 {
                                     //double animation testing 2
@@ -350,11 +415,15 @@ namespace Game_CandyLand
                                     while ((nextSpace - 1) != doublelocation)
                                     {
                                         //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                        pbxGameBoard.Refresh();
                                         if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                         {
+                                            pbxGameBoard.Refresh();
                                             this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                            pbxGameBoard.Refresh();
                                         }
-                                        System.Threading.Thread.Sleep(500);
+                                        pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                         pbxGameBoard.Refresh();
                                         nextSpace++;
                                     }
@@ -362,11 +431,11 @@ namespace Game_CandyLand
                                     //this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[doublelocation], this.PlayBoard.LocationsY[doublelocation]);
                                     return;
                                 }
-
+                                pbxGameBoard.Refresh();
                                 doublelocation++;
                             }
                         }
-
+                        pbxGameBoard.Refresh();
                         firstlocation++;
                     }
                 }
@@ -375,6 +444,7 @@ namespace Game_CandyLand
                     int firstlocation = nextlocation;
                     while (firstlocation < 135)
                     {
+                        pbxGameBoard.Refresh();
                         if (this.PlayBoard.LocationsColor[firstlocation] == "Orange")
                         {
                             //double animation testing
@@ -382,11 +452,15 @@ namespace Game_CandyLand
                             while ((nextSpace - 1) != firstlocation)
                             {
                                 //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                pbxGameBoard.Refresh();
                                 if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                 {
+                                    pbxGameBoard.Refresh();
                                     this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                    pbxGameBoard.Refresh();
                                 }
-                                System.Threading.Thread.Sleep(500);
+                                pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                 pbxGameBoard.Refresh();
                                 nextSpace++;
                             }
@@ -395,6 +469,7 @@ namespace Game_CandyLand
                             int doublelocation = firstlocation + 1;
                             while (doublelocation < 135)
                             {
+                                pbxGameBoard.Refresh();
                                 if (this.PlayBoard.LocationsColor[doublelocation] == "Orange")
                                 {
                                     //double animation testing 2
@@ -402,11 +477,15 @@ namespace Game_CandyLand
                                     while ((nextSpace - 1) != doublelocation)
                                     {
                                         //MessageBox.Show(nextSpace.ToString(), nextlocation.ToString());
+                                        pbxGameBoard.Refresh();
                                         if (this.lblLabel1.Location != new Point(this.playBoard.LocationsX[nextSpace], this.playBoard.LocationsY[nextSpace]))
                                         {
+                                            pbxGameBoard.Refresh();
                                             this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[nextSpace], this.PlayBoard.LocationsY[nextSpace]);
+                                            pbxGameBoard.Refresh();
                                         }
-                                        System.Threading.Thread.Sleep(500);
+                                        pbxGameBoard.Refresh();
+                                System.Threading.Thread.Sleep(100);
                                         pbxGameBoard.Refresh();
                                         nextSpace++;
                                     }
@@ -414,11 +493,11 @@ namespace Game_CandyLand
                                     //this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[doublelocation], this.PlayBoard.LocationsY[doublelocation]);
                                     return;
                                 }
-
+                                pbxGameBoard.Refresh();
                                 doublelocation++;
                             }
                         }
-
+                        pbxGameBoard.Refresh();
                         firstlocation++;
                     }
                 }
@@ -443,6 +522,7 @@ namespace Game_CandyLand
                     // Show the form for the winner.
                     winner.ShowDialog();
                 }
+
             }
         }
 
@@ -467,6 +547,7 @@ namespace Game_CandyLand
 
                 i++;
             }
+
             string currentCard = this.CardDeck.Draw();
             this.lblOutputLog.Text = currentCard;
 
@@ -562,7 +643,7 @@ namespace Game_CandyLand
             }
             else if (this.CardDeck.CurrentCard == "GingerbreadMan")
             {
-                if (currentlocation > 42)
+                if (currentlocation > 9)
                 {
                     this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[9], this.PlayBoard.LocationsY[9]);
                 }
@@ -605,23 +686,23 @@ namespace Game_CandyLand
             this.PlayBoard.LocationsX[0] = 0;
             this.PlayBoard.LocationsY[0] = 0;
 
-            this.PlayBoard.LocationsX[1] = 211;
-            this.PlayBoard.LocationsY[1] = 814;
+            this.PlayBoard.LocationsX[1] = 206;
+            this.PlayBoard.LocationsY[1] = 810;
 
-            this.PlayBoard.LocationsX[2] = 262;
-            this.PlayBoard.LocationsY[2] = 816;
+            this.PlayBoard.LocationsX[2] = 257;
+            this.PlayBoard.LocationsY[2] = 810;
 
-            this.PlayBoard.LocationsX[3] = 297;
-            this.PlayBoard.LocationsY[3] = 801;
+            this.PlayBoard.LocationsX[3] = 293;
+            this.PlayBoard.LocationsY[3] = 797;
 
-            this.PlayBoard.LocationsX[4] = 321;
-            this.PlayBoard.LocationsY[4] = 770;
+            this.PlayBoard.LocationsX[4] = 316;
+            this.PlayBoard.LocationsY[4] = 767;
 
-            this.PlayBoard.LocationsX[5] = 340;
-            this.PlayBoard.LocationsY[5] = 733;
+            this.PlayBoard.LocationsX[5] = 335;
+            this.PlayBoard.LocationsY[5] = 730;
 
             this.PlayBoard.LocationsX[6] = 372;
-            this.PlayBoard.LocationsY[6] = 702;
+            this.PlayBoard.LocationsY[6] = 700;
 
             this.PlayBoard.LocationsX[7] = 416;
             this.PlayBoard.LocationsY[7] = 686;
@@ -1006,6 +1087,14 @@ namespace Game_CandyLand
 
             this.PlayBoard.LocationsX[134] = 448;
             this.PlayBoard.LocationsY[134] = 147;
+
+            int z = 5;
+            while (z < 134)
+            {
+                this.PlayBoard.LocationsX[z] -= 5;
+                this.PlayBoard.LocationsY[z] -= 10;
+                z++;
+            }
 
             // End of plotting out points in array
 
