@@ -61,17 +61,14 @@ namespace Game_CandyLand
 
         private void btnMultiplayer_Click(object sender, EventArgs e)
         {
-            // Close this form
+            // Close this form.
             this.Hide();
 
-            // Set up the new form which will be the play area for the game
-            PlayerBoard playArea = new PlayerBoard()
-            {
-                Width = 1500,
-                Height = 985
-            };
+            // Create a new instance of the Multiplayer form.
+            Multiplayer multiplayerMenu = new Multiplayer();
 
-            playArea.ShowDialog();
+            // Show the multiplayer menu.
+            multiplayerMenu.ShowDialog();
         }
     }
 }
