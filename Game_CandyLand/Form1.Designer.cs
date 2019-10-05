@@ -61,10 +61,10 @@ namespace Game_CandyLand
             this.btnSinglePlayer.FlatAppearance.BorderSize = 0;
             this.btnSinglePlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSinglePlayer.ForeColor = System.Drawing.Color.Black;
-            this.btnSinglePlayer.Location = new System.Drawing.Point(347, 193);
-            this.btnSinglePlayer.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSinglePlayer.Location = new System.Drawing.Point(130, 81);
+            this.btnSinglePlayer.Margin = new System.Windows.Forms.Padding(2);
             this.btnSinglePlayer.Name = "btnSinglePlayer";
-            this.btnSinglePlayer.Size = new System.Drawing.Size(275, 100);
+            this.btnSinglePlayer.Size = new System.Drawing.Size(103, 42);
             this.btnSinglePlayer.TabIndex = 0;
             this.btnSinglePlayer.Text = "Single Player";
             this.btnSinglePlayer.UseVisualStyleBackColor = false;
@@ -77,10 +77,10 @@ namespace Game_CandyLand
             this.btnAbout.FlatAppearance.BorderSize = 0;
             this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnAbout.ForeColor = System.Drawing.Color.Black;
-            this.btnAbout.Location = new System.Drawing.Point(347, 542);
-            this.btnAbout.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAbout.Location = new System.Drawing.Point(130, 197);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(2);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(275, 100);
+            this.btnAbout.Size = new System.Drawing.Size(103, 42);
             this.btnAbout.TabIndex = 1;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = false;
@@ -89,9 +89,14 @@ namespace Game_CandyLand
             // btnMultiplayer
             // 
             this.btnMultiplayer.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnMultiplayer.Location = new System.Drawing.Point(347, 360);
+            this.btnMultiplayer.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnMultiplayer.FlatAppearance.BorderSize = 0;
+            this.btnMultiplayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnMultiplayer.ForeColor = System.Drawing.Color.Black;
+            this.btnMultiplayer.Location = new System.Drawing.Point(130, 139);
+            this.btnMultiplayer.Margin = new System.Windows.Forms.Padding(2);
             this.btnMultiplayer.Name = "btnMultiplayer";
-            this.btnMultiplayer.Size = new System.Drawing.Size(275, 86);
+            this.btnMultiplayer.Size = new System.Drawing.Size(103, 42);
             this.btnMultiplayer.TabIndex = 2;
             this.btnMultiplayer.Text = "Multiplayer";
             this.btnMultiplayer.UseVisualStyleBackColor = false;
@@ -99,14 +104,14 @@ namespace Game_CandyLand
             // 
             // CandyLandGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1005, 675);
+            this.ClientSize = new System.Drawing.Size(377, 283);
             this.Controls.Add(this.btnMultiplayer);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnSinglePlayer);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CandyLandGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CandyLand";
