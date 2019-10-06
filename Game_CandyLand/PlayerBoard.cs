@@ -1125,7 +1125,7 @@ namespace Game_CandyLand
             }
 
             // Set round equal to 0. // todo is round here 1 or 0?
-            round = 0;
+            round = 1;
 
             // Set round label to round 1.
             lblRound.Text = "Round 1";
