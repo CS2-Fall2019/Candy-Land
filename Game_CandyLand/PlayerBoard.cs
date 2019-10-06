@@ -838,6 +838,7 @@ namespace Game_CandyLand
             }
 
             this.MovePlayer(currentCard);
+            this.btnDraw.Enabled = false;
 
             // Set turn done to true.
             // PlayerList[0].TurnDone = true;
