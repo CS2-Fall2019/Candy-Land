@@ -56,22 +56,24 @@ namespace Game_CandyLand
         /// <param name="e">EventArgs e.</param>
         private void BtnAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Developers: Brandon, Ian, James, Mike" + "\n" + "Version: 1.000 " + "\n" + "Date: September 2019", "Game Information");
+            MessageBox.Show("Developers: Brandon, Ian, James, Mike" + "\n" + "Version: 0.02 " + "\n" + "Date: October 2019", "Game Information");
         }
 
-        private void btnMultiplayer_Click(object sender, EventArgs e)
+        /// <summary>
+        /// This opens the multiplayer menu.
+        /// </summary>
+        /// <param name="sender">The sender object.</param>
+        /// <param name="e">EventArgs e.</param>
+        private void BtnMultiplayer_Click(object sender, EventArgs e)
         {
-            // Close this form
+            // Close this form.
             this.Hide();
 
-            // Set up the new form which will be the play area for the game
-            PlayerBoard playArea = new PlayerBoard()
-            {
-                Width = 1500,
-                Height = 985
-            };
+            // Create a new instance of the Multiplayer form.
+            Multiplayer multiplayerMenu = new Multiplayer();
 
-            playArea.ShowDialog();
+            // Show the multiplayer menu.
+            multiplayerMenu.ShowDialog();
         }
     }
 }
