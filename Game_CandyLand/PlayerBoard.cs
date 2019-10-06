@@ -980,6 +980,7 @@ namespace Game_CandyLand
             {
                 currentPlayer = PlayerList[0].PlayerNumber;
 
+                MessageBox.Show("It is player " + currentPlayer + "'s turn.");
 
 
                 // After start game move label 1 to bottom of screen.
