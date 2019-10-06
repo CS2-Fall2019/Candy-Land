@@ -1020,6 +1020,7 @@ namespace Game_CandyLand
                     else
                     {
                         btnDraw.Enabled = true;
+                        MessageBox.Show("Player " + currentPlayer + " please draw a card.");
                         // Draw button is already enabled.
                         // Human player may go.
                     }
