@@ -855,7 +855,10 @@ namespace Game_CandyLand
                     // Round is still going.
                 }
             }
-            
+            else
+            {
+                SetRound();
+            }
 
  
         }
