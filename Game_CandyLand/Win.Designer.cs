@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelWin = new System.Windows.Forms.Label();
+            this.lblWin = new System.Windows.Forms.Label();
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // labelWin
+            // lblWin
             // 
-            this.labelWin.AutoSize = true;
-            this.labelWin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWin.Location = new System.Drawing.Point(104, 135);
-            this.labelWin.Name = "labelWin";
-            this.labelWin.Size = new System.Drawing.Size(584, 46);
-            this.labelWin.TabIndex = 0;
-            this.labelWin.Text = "Congratulations player 1 wins!";
+            this.lblWin.AutoSize = true;
+            this.lblWin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWin.Location = new System.Drawing.Point(104, 135);
+            this.lblWin.Name = "lblWin";
+            this.lblWin.Size = new System.Drawing.Size(584, 46);
+            this.lblWin.TabIndex = 0;
+            this.lblWin.Text = "Congratulations player 1 wins!";
             // 
             // btnNewGame
             // 
@@ -71,7 +71,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnNewGame);
-            this.Controls.Add(this.labelWin);
+            this.Controls.Add(this.lblWin);
             this.Name = "Win";
             this.Text = "Win";
             this.ResumeLayout(false);
@@ -81,7 +81,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelWin;
+        private System.Windows.Forms.Label lblWin;
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.Button btnExit;
     }

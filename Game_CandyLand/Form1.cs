@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Form1.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
-//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
+// <copyright file="Form1.cs" company="Ian Burroughs, Mike Boudreau, Brandon Biles & James A. Schulze">
+//     Copyright (c) Ian Burroughs, Mike Boudreau, Brandon Biles & James A. Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ namespace Game_CandyLand
             // Set up the new form which will be the play area for the game
             PlayerBoard playArea = new PlayerBoard()
             {
-                Width = 1500,
+                Width = 1510,
                 Height = 985
             };
 
@@ -59,19 +59,21 @@ namespace Game_CandyLand
             MessageBox.Show("Developers: Brandon, Ian, James, Mike" + "\n" + "Version: 1.000 " + "\n" + "Date: September 2019", "Game Information");
         }
 
-        private void btnMultiplayer_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Button to open the Multiplayer options form.
+        /// </summary>
+        /// <param name="sender">The sender object.</param>
+        /// <param name="e">EventArgs e.</param>
+        private void BtnMultiplayer_Click(object sender, EventArgs e)
         {
-            // Close this form
+            // Close this form.
             this.Hide();
 
-            // Set up the new form which will be the play area for the game
-            PlayerBoard playArea = new PlayerBoard()
-            {
-                Width = 1500,
-                Height = 985
-            };
+            // Create a new instance of the Multiplayer form.
+            Multiplayer multiplayerMenu = new Multiplayer();
 
-            playArea.ShowDialog();
+            // Show the multiplayer menu.
+            multiplayerMenu.ShowDialog();
         }
     }
 }

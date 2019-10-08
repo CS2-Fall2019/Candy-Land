@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Player.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
-//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
+// <copyright file="Player.cs" company="Ian Burroughs, Mike Boudreau, Brandon Biles & James A. Schulze">
+//     Copyright (c) Ian Burroughs, Mike Boudreau, Brandon Biles & James A. Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
@@ -33,14 +33,19 @@ namespace Game_CandyLand
         private int playerNumber;
 
         /// <summary>
-        /// Players game image for their piece.
-        /// </summary>
-        private int gamePiece;
-
-        /// <summary>
         /// Players name
         /// </summary>
         private string name;
+
+        /// <summary>
+        /// Boolean to see if the players turn is done.
+        /// </summary>
+        private bool turnDone;
+
+        /// <summary>
+        /// Boolean to see if the player is a computer.
+        /// </summary>
+        private bool isComputer;
 
         /// <summary>
         /// Gets or sets position.
@@ -61,15 +66,6 @@ namespace Game_CandyLand
         }
 
         /// <summary>
-        /// Gets or sets GamePiece.
-        /// </summary>
-        public int GamePiece
-        {
-            get { return this.gamePiece; }
-            set { this.gamePiece = value; }
-        }
-
-        /// <summary>
         /// Gets or sets name.
         /// </summary>
         public string Name
@@ -85,6 +81,24 @@ namespace Game_CandyLand
         {
             get { return this.stuck; }
             set { this.stuck = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether a players turn is done.
+        /// </summary>
+        public bool TurnDone
+        {
+            get { return this.turnDone; }
+            set { this.turnDone = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether a player is a computer or not.
+        /// </summary>
+        public bool IsComputer
+        {
+            get { return this.isComputer; }
+            set { this.isComputer = value; }
         }
     }
 }
