@@ -9,6 +9,9 @@
   <project key="1829365370">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <project key="1251575954">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
   <sourcecode name="Board.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019/09/11 14:19:47.002</styleCop>
@@ -343,14 +346,14 @@
       </violation>
     </violations>
   </sourcecode>
-  <project key="1251575954">
+  <project key="-1369982531">
     <configuration>DEBUG;TRACE</configuration>
   </project>
   <sourcecode name="PlayerBoard.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019/09/11 14:19:47.002</styleCop>
       <settingsFile>2019/10/08 00:48:47.000</settingsFile>
-      <sourceFile>2019/10/08 15:26:00.517</sourceFile>
+      <sourceFile>2019/10/08 15:47:58.454</sourceFile>
       <parser>2019/09/11 14:19:47.002</parser>
       <StyleCop.CSharp.DocumentationRules>2019/09/11 14:19:47.002</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>2030360953</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -370,12 +373,12 @@
     <violations>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="CodeMustNotContainMultipleWhitespaceInARow" ruleCheckId="SA1025">
         <context>The code contains multiple spaces in a row. Only one space is needed.</context>
-        <line>1958</line>
-        <index>82568</index>
-        <endIndex>82569</endIndex>
-        <startLine>1958</startLine>
+        <line>1963</line>
+        <index>82739</index>
+        <endIndex>82740</endIndex>
+        <startLine>1963</startLine>
         <startColumn>57</startColumn>
-        <endLine>1958</endLine>
+        <endLine>1963</endLine>
         <endColumn>58</endColumn>
         <warning>False</warning>
       </violation>

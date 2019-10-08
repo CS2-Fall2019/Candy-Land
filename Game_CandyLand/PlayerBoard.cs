@@ -1246,9 +1246,12 @@ namespace Game_CandyLand
                 this.SetRound();
             }
 
-            if (this.PlayerList[0].PlayerNumber == 1 && this.round == 1)
+            if (this.PlayerList != null)
             {
-                this.BtnNextPlayer_Click(null, null);
+                if (this.PlayerList[0].PlayerNumber == 1 && this.round == 1)
+                {
+                    this.BtnNextPlayer_Click(null, null);
+                }
             }
         }
 
@@ -1808,10 +1811,12 @@ namespace Game_CandyLand
             this.lblLabel4.Location = new Point(147, 801);
             this.lblLabel2.Location = new Point(62, 801);
             this.lblLabel1.Location = new Point(this.PlayBoard.LocationsX[1], this.PlayBoard.LocationsY[1]);
-
-            if (this.PlayerList[0].IsComputer)
-            {
+            if (this.PlayerList != null)
+            { 
+                if (this.PlayerList[0].IsComputer)
+                {
                 this.btnDraw.Text = "Start";
+                }
             }
         }
 
