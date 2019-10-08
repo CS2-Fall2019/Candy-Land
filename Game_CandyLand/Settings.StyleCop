@@ -1,0 +1,8 @@
+<StyleCopSettings Version="105">
+  <GlobalSettings>
+    <CollectionProperty Name="RecognizedWords">
+      <Value>Lbl</Value>
+      <Value>Winscreen</Value>
+    </CollectionProperty>
+  </GlobalSettings>
+</StyleCopSettings>

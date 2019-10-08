@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="AssemblyInfo.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
-//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
+// <copyright file="AssemblyInfo.cs" company="Ian Burroughs, Mike Boudreau, Brandon Biles & James A. Schulze">
+//     Copyright (c) Ian Burroughs, Mike Boudreau, Brandon Biles & James A. Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 

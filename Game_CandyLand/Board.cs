@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Board.cs" company="Ian Burroughs, Mike B, Triple B & Schulze">
-//     Copyright (c) Ian Burroughs, Mike B, Biles & Schulze. All rights reserved.
+// <copyright file="Board.cs" company="Ian Burroughs, Mike Boudreau, Brandon Biles & James A. Schulze">
+//     Copyright (c) Ian Burroughs, Mike Boudreau, Brandon Biles & James A. Schulze. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
@@ -11,32 +11,13 @@ namespace Game_CandyLand
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using System.Windows.Forms.VisualStyles;
 
     /// <summary>
     /// Class to represent the board.
     /// </summary>
     public class Board
     {
-        /// <summary>
-        /// Number of Players field.
-        /// </summary>
-        private int numberOfPlayers; // Change number for final version
-
-        /// <summary>
-        /// Round Number field.
-        /// </summary>
-        private int round;
-
-        /// <summary>
-        /// Current Player field.
-        /// </summary>
-        private int currentPlayer;
-
-        /// <summary>
-        /// The Player in first place field.
-        /// </summary>
-        private int leader;
-
         /// <summary>
         /// locations array.
         /// </summary>
@@ -58,43 +39,7 @@ namespace Game_CandyLand
         private string[] locationsColor = new string[135];
 
         /// <summary>
-        /// Gets or sets Number of Players field.
-        /// </summary>
-        public int NumberOfPlayers
-        {
-            get { return this.numberOfPlayers; }
-            set { this.numberOfPlayers = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets Number field.
-        /// </summary>
-        public int Round
-        {
-            get { return this.round; }
-            set { this.round = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets Player field.
-        /// </summary>
-        public int CurrentPlayer
-        {
-            get { return this.currentPlayer; }
-            set { this.currentPlayer = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets leader field.
-        /// </summary>
-        public int Leader
-        {
-            get { return this.leader; }
-            set { this.leader = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets Number of Players field.
+        /// Gets or sets Locations.
         /// </summary>
         public int[] Locations
         {
@@ -129,11 +74,10 @@ namespace Game_CandyLand
             set { this.locationsColor = value; }
         }
 
-        // Lose a Turn - will look something like this. so no one is stuck infinitely we only change stuck to true if its false. it should remove after one turn
         /*
         public void LoseATurn(Player)
         {
-            if ((player.location == Locations[46] || player.location == Locations[86] || player.location == Locations[117]) && player.stuck == false)
+            if (this.PlayBoard.this.PlayerList[0].location == Locations[46] || player.location == Locations[86] || player.location == Locations[117]) && player.stuck == false)
             {
                 Player.stuck = true;
             }
@@ -164,14 +108,6 @@ namespace Game_CandyLand
 
             }
         }
-        */
-
-        /*
-        /// <summary>
-        /// Method to check which players turn it is. 
-        /// </summary>
-        public void CurrentPlayerTurn()
-        {}
         */
     }
 }
